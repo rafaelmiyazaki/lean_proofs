@@ -1,0 +1,14 @@
+{
+  "paper": "Improved Ramsey Bounds for Generalized Schur Equations",
+  "source": "arXiv:2605.15147v1",
+  "date": "2026-11-18",
+  "compilation_attempted_in_authoring_environment": false,
+  "compilation_passed": null,
+  "verification_status": "DRAFT_ONLY",
+  "main_theorems_verified": false,
+  "external_dependencies": [
+    "affine residue obstruction converse",
+    "Crittenden–Vanden Eynden covering theorem",
+    "weighted local-coloring lemma"
+  ]
+}
