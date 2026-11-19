@@ -114,7 +114,6 @@ theorem exponential_list_zero_forward
               exponentialListSum (p :: tail) (s + (j + 1)) =
                 exponentialListSum (p :: tail) ((s + j) + 1) := by
                   congr 1
-                  omega
               _ = p.2 * exponentialListSum (p :: tail) (s + j) :=
                 hstep (s + j) (by omega)
               _ = 0 := by rw [ihj]; simp
