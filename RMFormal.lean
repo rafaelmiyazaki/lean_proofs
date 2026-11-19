@@ -51,3 +51,5 @@ import RMFormal.Schur.GraphLayers
 import RMFormal.Schur.GraphLayerDeletion
 
 import RMFormal.Schur.MassAccounting
+
+import RMFormal.Schur.DeletionSize
