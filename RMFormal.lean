@@ -91,3 +91,5 @@ import RMFormal.Schur.HeavyStarBall
 import RMFormal.Schur.RootSlowGrowth
 
 import RMFormal.Schur.HeavySeedBall
+
+import RMFormal.Schur.HeavySlowSelection
