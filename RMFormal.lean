@@ -7,3 +7,5 @@ import RMFormal.Schur.TwoPower
 import RMFormal.Schur.SmallCases
 
 import RMFormal.Schur.DyadicLower
+
+import RMFormal.Schur.SmallThresholds
