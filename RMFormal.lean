@@ -59,3 +59,5 @@ import RMFormal.Schur.RealWeights
 import RMFormal.Schur.WeightGain
 
 import RMFormal.Schur.WeightMassInductionStep
+
+import RMFormal.Schur.MassInduction
