@@ -31,7 +31,6 @@ theorem old_mass_partition
       (∑ v ∈ U \ (S ∪ T), w v) +
         (∑ v ∈ S ∪ T, w v) = ∑ v ∈ U, w v := by
     rw [Finset.sum_sdiff hUnion]
-    ring
   rw [Finset.sum_union hST] at hPart
   linarith
 
