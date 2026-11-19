@@ -52,8 +52,9 @@ theorem finite_list_residue_obstruction
     exact hAvoid m hm hs
   have hdiff (x : ℕ) (hx : x ∈ A) :
       (d : ℤ) ∣ (x : ℤ) - (b : ℤ) := by
-    exact gcd_map_dvd vals
-      (fun z => (z : ℤ) - (b : ℤ)) x (hcover x hx)
+    simpa only [d] using
+      (gcd_map_dvd vals (fun z => (z : ℤ) - (b : ℤ))
+        x (hcover x hx))
   by_cases hd0 : d = 0
   · have hsame (x : ℕ) (hx : x ∈ A) : x = b := by
       have h : (0 : ℤ) ∣ (x : ℤ) - (b : ℤ) := by
