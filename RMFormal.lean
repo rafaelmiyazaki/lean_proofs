@@ -29,3 +29,5 @@ import RMFormal.Schur.CoveringBridge
 import RMFormal.Schur.ChargeClasses
 
 import RMFormal.Schur.ChargeColoring
+
+import RMFormal.Schur.ColorPaths
