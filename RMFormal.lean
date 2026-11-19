@@ -37,3 +37,5 @@ import RMFormal.Schur.PoweredWeights
 import RMFormal.Schur.SlowGrowth
 
 import RMFormal.Schur.WeightedDeletion
+
+import RMFormal.Schur.HeavyClass
