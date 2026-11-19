@@ -23,3 +23,5 @@ import RMFormal.Schur.Audit
 import RMFormal.Schur.ArbitraryGcd
 
 import RMFormal.Schur.ResidueNecessity
+
+import RMFormal.Schur.CoveringBridge
