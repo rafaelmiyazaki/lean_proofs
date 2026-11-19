@@ -115,3 +115,5 @@ import RMFormal.Schur.FiniteSchurRealBound
 import RMFormal.Schur.SchurPowerConversion
 
 import RMFormal.Schur.MainTheorem11
+
+import RMFormal.Schur.Corollary12
