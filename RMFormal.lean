@@ -65,3 +65,5 @@ import RMFormal.Schur.MassInduction
 import RMFormal.Schur.FinalWeightBound
 
 import RMFormal.Schur.WeightedLemmaReduction
+
+import RMFormal.Schur.HeavyNeighbor
