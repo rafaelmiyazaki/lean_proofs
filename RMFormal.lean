@@ -85,3 +85,5 @@ import RMFormal.Schur.DegreeOneMassStep
 import RMFormal.Schur.BallMass
 
 import RMFormal.Schur.ColorBallIncident
+
+import RMFormal.Schur.HeavyStarBall
