@@ -15,3 +15,5 @@ import RMFormal.Schur.AffineRelation
 import RMFormal.Schur.DifferenceCertificate
 
 import RMFormal.Schur.BezoutList
+
+import RMFormal.Schur.GcdOne
