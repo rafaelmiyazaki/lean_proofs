@@ -25,3 +25,5 @@ import RMFormal.Schur.ArbitraryGcd
 import RMFormal.Schur.ResidueNecessity
 
 import RMFormal.Schur.CoveringBridge
+
+import RMFormal.Schur.ChargeClasses
