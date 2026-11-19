@@ -1,4 +1,5 @@
 import RMFormal.Schur.GcdOne
+import RMFormal.Schur.ResidueNecessity
 import RMFormal.Schur.DyadicLower
 import RMFormal.Schur.SmallThresholds
 
