@@ -1,3 +1,4 @@
+import RMFormal.Schur.WeightedLemma21
 import RMFormal.Schur.DegreeOneMassStep
 import RMFormal.Schur.GcdOne
 import RMFormal.Schur.ResidueNecessity
@@ -88,3 +89,12 @@ are not unproved statements of the research paper.
 #print axioms SchurFormal.degree_one_color_ball_is_univ
 #print axioms SchurFormal.exists_heavy_independent_class
 #print axioms SchurFormal.degree_one_mass_preserving_induced_subgraph
+
+-- Final weighted local-coloring lemma and exact induced-graph bridges
+#print axioms SchurFormal.exists_heavy_slow_color_layer
+#print axioms SchurFormal.degree_ge_two_mass_preserving_induced_subgraph
+#print axioms SchurFormal.complete_graph_mass_preserving_deletion
+#print axioms SchurFormal.induced_local_colorability
+#print axioms SchurFormal.induced_mass_image
+#print axioms SchurFormal.mass_preserving_deletion_on_every_induced_set
+#print axioms SchurFormal.weighted_local_coloring_lemma
