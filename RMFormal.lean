@@ -107,3 +107,5 @@ import RMFormal.Schur.UniversalWeightedInduction
 import RMFormal.Schur.WeightedLemma21
 
 import RMFormal.Schur.FiniteDifferenceGraph
+
+import RMFormal.Schur.FiniteDifferenceWalk
