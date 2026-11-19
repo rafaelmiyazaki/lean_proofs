@@ -73,4 +73,20 @@ theorem integerListGcd_bezout (xs : List ℤ) :
       _ = (Int.gcd x g : ℤ) :=
         (Int.gcd_eq_gcd_ab x g).symm
 
+/-- The gcd of a list divides every entry of that list. -/
+theorem integerListGcd_dvd_entry (xs : List ℤ) (x : ℤ)
+    (hx : x ∈ xs) : (integerListGcd xs : ℤ) ∣ x := by
+  induction xs with
+  | nil =>
+    simp at hx
+  | cons y ys ih =>
+    rcases List.mem_cons.mp hx with hxy | hrest
+    · subst x
+      simpa [integerListGcd] using
+        (Int.gcd_dvd_left y (integerListGcd ys : ℤ))
+    · exact dvd_trans
+        (by simpa [integerListGcd] using
+          (Int.gcd_dvd_right y (integerListGcd ys : ℤ)))
+        (ih hrest)
+
 end SchurFormal

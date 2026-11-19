@@ -1,7 +1,7 @@
 {
   "paper": "Improved Ramsey Bounds for Generalized Schur Equations",
   "source": "arXiv:2605.15147v1",
-  "date": "2026-11-18",
+  "date": "2026-11-19",
   "lean": "4.28.0",
   "mathlib": "v4.28.0",
   "ci_reference_pre_doc_update": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44444537121",
@@ -13,6 +13,10 @@
     "equal_charge_cross_counts",
     "cross_count_le",
     "nonzero_residue_avoids_all_lengths",
+    "affine_relation_forces_solution",
+    "difference_certificate_forces_solution",
+    "integerListGcd_bezout",
+    "gcd_one_differences_force_solution",
     "two_power_lower",
     "one_color_two",
     "two_color_four"
@@ -24,5 +28,13 @@
   "main_quantitative_theorem_verified": false,
   "theorem_1_3_upper_all_r_verified": false,
   "external_covering_theorem_proof_known": "https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean",
-  "external_covering_proof_imported": false
+  "external_covering_proof_imported": false,
+  "main_theorems_verified": false,
+  "new_commit_compilation_pending": true,
+  "remaining": [
+    "arbitrary-gcd affine obstruction",
+    "Crittenden–Vanden Eynden covering theorem integration",
+    "weighted local-coloring lemma",
+    "Theorem 1.1"
+  ]
 }

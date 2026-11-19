@@ -16,6 +16,11 @@ Source: Miyazaki, Mulrenin, Pohoată and Zheng, [arXiv:2605.15147v1](https://arx
 | Theorem 1.3 upper, r=2 | `SmallThresholds.lean` | Unconditional proof compiled |
 | Theorem 1.3 upper, arbitrary r | `TwoPower.lean` | Compiled **conditional** deduction |
 | Theorem 1.1 | `Definitions.lean` | Statement only; not proved |
+| Integer-affine relation implies a Schur equation | `AffineRelation.lean` | Unconditional proof compiled |
+| Explicit difference certificate gives a Schur equation | `DifferenceCertificate.lean` | Unconditional proof compiled |
+| Finite-list Bézout identity | `BezoutList.lean` | Unconditional proof compiled |
+| Gcd of integer list divides every entry | `BezoutList.lean` | Candidate proof; CI pending |
+| Gcd-one difference obstruction | `GcdOne.lean` | Unconditional proof compiled |
 | Weighted local-coloring Lemma 2.1 | — | Not formalized |
 | Affine obstruction converse | `TwoPower.lean` | Explicit unproved principle |
 | Crittenden–Vanden Eynden covering theorem | `TwoPower.lean` | Explicit unproved principle in this project |
@@ -26,7 +31,7 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 
 ## Remaining stages
 
-1. Formalize and prove the affine-obstruction converse using gcd, differences, and Bézout.
+1. Complete the **arbitrary-gcd case** of the affine-obstruction converse. The gcd-one case and finite Bézout coefficients are proved.
 2. Connect the covering theorem to `ResidueCoveringPrinciple` with compatible Lean and Mathlib versions.
 3. Complete the general upper direction of Theorem 1.3.
 4. Formalize the colored-graph weighted lemma (Lemma 2.1).
@@ -35,3 +40,7 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 ## Trust policy
 
 `MainBoundPowered`, `ResidueObstructionPrinciple`, and `ResidueCoveringPrinciple` are **definitions of propositions**. They are not proved merely because a theorem accepts them as arguments. Audit each claimed verified theorem using `#print axioms` and verify that its actual elaborated statement faithfully represents the manuscript (including positive intervals and repeated summands).
+
+## Axiom auditing
+
+`RMFormal/Schur/Audit.lean` prints Lean's reported axioms for each unconditional result. This is included in the root build. CI success plus an audit free of `sorryAx` is required for future proof-completion claims.
