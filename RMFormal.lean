@@ -33,3 +33,5 @@ import RMFormal.Schur.ChargeColoring
 import RMFormal.Schur.ColorPaths
 
 import RMFormal.Schur.PoweredWeights
+
+import RMFormal.Schur.SlowGrowth
