@@ -26,7 +26,14 @@ Source: Miyazaki, Mulrenin, Pohoată and Zheng, [arXiv:2605.15147v1](https://arx
 | Gcd of integer list divides every entry | `BezoutList.lean` | Unconditional proof compiled and axiom-audited |
 | Gcd-one difference obstruction | `GcdOne.lean` | Unconditional proof compiled |
 | Weighted local-coloring vertex-weight factorial update | `PoweredWeights.lean` | **Unconditional Lean proof compiled** |
-| Weighted local-coloring Lemma 2.1 | — | Main colored-graph induction not yet formalized |
+| Slow-growth layer mass inequality | `SlowGrowth.lean` | Unconditional proof compiled |
+| Final weighted deletion inequality | `WeightedDeletion.lean` | Unconditional proof compiled |
+| Largest weighted color class (abstract and finite coloring) | `HeavyClass.lean`, `ColorFiberMass.lean` | Unconditional proofs compiled |
+| Monotonicity and strict drop of incident color-degree | `ColorDegrees.lean` | Unconditional proofs compiled |
+| Elimination of a selected edge color after deletion | `ColorDeletion.lean` | Unconditional proofs compiled |
+| Colored graph walks, radius balls, and next-layer closure | `GraphLayers.lean` | Proof draft, CI in progress |
+| Layer deletion directly from radius-ball geometry | `GraphLayerDeletion.lean` | Proof draft, CI in progress |
+| Weighted local-coloring Lemma 2.1 | — | Graph-theoretic induction and total-weight estimate still unproved |
 | Affine obstruction converse | `ResidueNecessity.lean` | **Unconditional Lean proof compiled** |
 | Complete finite affine-obstruction equivalence | `ResidueNecessity.lean` | **Unconditional Lean theorem compiled and axiom-audited** |
 | Crittenden–Vanden Eynden covering theorem | `CoveringBridge.lean` | Explicit external theorem statement; not proved in this project |
@@ -67,3 +74,7 @@ The elementary identity for mth-powered weights was verified in [GitHub Actions 
 ## Latest verified audit, November 19, 2026
 
 [GitHub Actions run 44543476720](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720) passed all 8048 jobs. All **17** unconditional theorems audited in `Audit.lean` reported only standard Lean foundational axioms, with no `sorryAx`. This is not a claim that the two main research theorems are complete: Theorem 1.1 and the general upper half of Theorem 1.3 remain mathematically unproved in this repository.
+
+## Weighted lemma subproofs, November 19
+
+The slow-growth lemma, mass-preservation inequality, weighted color-class pigeonhole principle and color-degree deletion facts now have green source builds. Two more modules link these facts to actual color-radius balls: `GraphLayers.lean` and `GraphLayerDeletion.lean`. Their status must be established by a passing CI run. None of these partial results establishes Lemma 2.1 until the full finite-graph induction, including weight comparison after induced-vertex deletion, has been compiled.

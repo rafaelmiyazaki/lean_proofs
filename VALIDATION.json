@@ -30,7 +30,17 @@
     "reachable_has_charge_coloring",
     "differencePath_has_short_rep",
     "radius_ball_charge_coloring",
-    "powered_color_weight_step"
+    "powered_color_weight_step",
+    "exists_slow_growth_step",
+    "exists_small_new_layer",
+    "weighted_deletion_preserves_mass",
+    "weighted_deletion_no_layer",
+    "exists_color_with_large_weight",
+    "exists_heavy_color_fiber",
+    "incident_color_degree_mono",
+    "incident_color_degree_strict_drop",
+    "selected_color_disappears",
+    "selected_color_degree_strictly_drops"
   ],
   "conditional_results_verified": [
     "corollary_1_2_of_main_bound",
@@ -43,7 +53,7 @@
   "external_covering_theorem_proof_known": "https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean",
   "external_covering_proof_imported": false,
   "main_theorems_verified": false,
-  "new_commit_compilation_pending": false,
+  "new_commit_compilation_pending": true,
   "remaining": [
     "arbitrary-gcd affine obstruction",
     "Crittenden–Vanden Eynden covering theorem integration",
@@ -67,5 +77,11 @@
   "latest_verified_source_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720",
   "weighted_local_coloring_lemma_verified": false,
   "charge_local_ball_coloring_verified": true,
-  "weighted_vertex_powered_factorial_identity_verified": true
+  "weighted_vertex_powered_factorial_identity_verified": true,
+  "latest_green_subproof_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44570262169",
+  "outstanding_weighted_induction": [
+    "full finite colored graph induction",
+    "mass comparison under vertex deletion",
+    "deduction of main quantitative bound"
+  ]
 }

@@ -2,6 +2,10 @@ import RMFormal.Schur.GcdOne
 import RMFormal.Schur.ResidueNecessity
 import RMFormal.Schur.ColorPaths
 import RMFormal.Schur.PoweredWeights
+import RMFormal.Schur.SlowGrowth
+import RMFormal.Schur.WeightedDeletion
+import RMFormal.Schur.ColorFiberMass
+import RMFormal.Schur.GraphLayerDeletion
 import RMFormal.Schur.DyadicLower
 import RMFormal.Schur.SmallThresholds
 
@@ -35,3 +39,14 @@ are not unproved statements of the research paper.
 
 -- Arithmetic of weighted local coloring
 #print axioms SchurFormal.powered_color_weight_step
+
+-- New components of the weighted local-coloring induction
+#print axioms SchurFormal.exists_slow_growth_step
+#print axioms SchurFormal.exists_small_new_layer
+#print axioms SchurFormal.weighted_deletion_preserves_mass
+#print axioms SchurFormal.exists_color_with_large_weight
+#print axioms SchurFormal.exists_heavy_color_fiber
+#print axioms SchurFormal.incident_color_degree_strict_drop
+#print axioms SchurFormal.selected_color_degree_strictly_drops
+#print axioms SchurFormal.single_color_neighbor_in_ball_or_layer
+#print axioms SchurFormal.color_radius_deletion_drops_degree

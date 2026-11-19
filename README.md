@@ -86,3 +86,9 @@ The color path is represented inductively and may repeat vertices. The local col
 `PoweredWeights.lean` formalizes the mth power of the vertex weight `W(d)=1/(χ^(d*m)*d!)` over `ℚ`, and proves the exact update identity `W(d-1)=χ^m*d*W(d)` for positive χ,d. Its proof compiled in [GitHub Actions run 44542819201](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44542819201). This is *not* a proof of the weighted local-coloring lemma; the graph-theoretic induction remains unformalized.
 
 **Latest full verification and audit:** [GitHub Actions run 44543476720](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720), 8048 jobs passed. Seventeen unconditional theorems audited with `#print axioms`; none reports `sorryAx`. The only reported axioms are `propext`, `Quot.sound`, and `Classical.choice`.
+
+## Weighted lemma: new formalization components
+
+The current branch now includes `SlowGrowth.lean` (slow-growth layer), `WeightedDeletion.lean` (mass-preserving deletion estimate), `HeavyClass.lean` and `ColorFiberMass.lean` (weighted pigeonhole/maximum color class), `ColorDegrees.lean` (monotonicity and strict loss of incident edge colors), and `ColorDeletion.lean` (removing color-c neighbors eliminates that color on the selected class). Those source modules have passed Lean builds.
+
+`GraphLayers.lean` and `GraphLayerDeletion.lean` connect arbitrary finite edge-colored graph balls to the deletion lemma; these are undergoing final verification. Lemma 2.1 still lacks its full weighted induction. See `PROOF_OBLIGATIONS.md` for precise status.
