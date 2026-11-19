@@ -11,3 +11,5 @@ import RMFormal.Schur.DyadicLower
 import RMFormal.Schur.SmallThresholds
 
 import RMFormal.Schur.AffineRelation
+
+import RMFormal.Schur.DifferenceCertificate
