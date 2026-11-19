@@ -41,3 +41,5 @@ import RMFormal.Schur.WeightedDeletion
 import RMFormal.Schur.HeavyClass
 
 import RMFormal.Schur.ColorDegrees
+
+import RMFormal.Schur.ColorDeletion
