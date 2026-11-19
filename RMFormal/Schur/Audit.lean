@@ -1,3 +1,4 @@
+import RMFormal.Schur.Corollary12
 import RMFormal.Schur.WeightedLemma21
 import RMFormal.Schur.DegreeOneMassStep
 import RMFormal.Schur.GcdOne
@@ -98,3 +99,12 @@ are not unproved statements of the research paper.
 #print axioms SchurFormal.induced_mass_image
 #print axioms SchurFormal.mass_preserving_deletion_on_every_induced_set
 #print axioms SchurFormal.weighted_local_coloring_lemma
+
+-- Complete quantitative main theorem and unconditional corollary
+#print axioms SchurFormal.finite_color_edge_is_difference
+#print axioms SchurFormal.finite_color_walk_to_difference_path
+#print axioms SchurFormal.finite_ball_charge_coloring
+#print axioms SchurFormal.finite_schur_bound_real
+#print axioms SchurFormal.real_schur_bound_to_powered
+#print axioms SchurFormal.main_bound_powered
+#print axioms SchurFormal.corollary_1_2_unconditional
