@@ -37,7 +37,7 @@ theorem finite_list_residue_obstruction
       (d : ℤ) ∣ (x : ℤ) - (b : ℤ) := by
     have hm : (x : ℤ) - (b : ℤ) ∈
         vals.map (fun z => (z : ℤ) - (b : ℤ)) := by
-      exact List.mem_map.mpr ⟨x, hcover x hx, rfl⟩
+      exact List.mem_map_of_mem (hcover x hx)
     exact integerListGcd_dvd_entry
       (vals.map (fun z => (z : ℤ) - (b : ℤ)))
       ((x : ℤ) - (b : ℤ)) hm
