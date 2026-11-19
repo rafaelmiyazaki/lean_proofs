@@ -31,7 +31,7 @@ theorem differencePath_has_short_rep
     (hp : DifferencePath A a x n) :
     ∃ t : ℤ, HasShortSignedRep A a x n t := by
   induction hp with
-  | nil a =>
+  | nil =>
     refine ⟨0, [], [], ?_, ?_, ?_, ?_, ?_⟩
     · intro z hz
       simp at hz
@@ -40,7 +40,8 @@ theorem differencePath_has_short_rep
     · simp
     · simp
     · simp
-  | snoc (b := b) (c := c) hprev hedge ih =>
+  | snoc hprev hedge ih =>
+    rename_i b c stepN
     obtain ⟨t, ps, ns, hps, hns, hlen, hcharge, hsum⟩ := ih
     rcases hedge with ⟨hbc, hA⟩ | ⟨hcb, hA⟩
     · refine ⟨t + 1, (c - b) :: ps, ns, ?_, ?_, ?_, ?_, ?_⟩
