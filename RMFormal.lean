@@ -69,3 +69,5 @@ import RMFormal.Schur.WeightedLemmaReduction
 import RMFormal.Schur.HeavyNeighbor
 
 import RMFormal.Schur.SeedMass
+
+import RMFormal.Schur.MinColorDegree
