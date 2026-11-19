@@ -23,9 +23,9 @@ Source: Miyazaki, Mulrenin, Pohoată and Zheng, [arXiv:2605.15147v1](https://arx
 | Gcd-one difference obstruction | `GcdOne.lean` | Unconditional proof compiled |
 | Weighted local-coloring Lemma 2.1 | — | Not formalized |
 | Affine obstruction converse | `ResidueNecessity.lean` | **Unconditional Lean proof compiled** |
-| Complete finite affine-obstruction equivalence | `ResidueNecessity.lean` | Combined theorem; current commit CI pending |
+| Complete finite affine-obstruction equivalence | `ResidueNecessity.lean` | **Unconditional Lean theorem compiled and axiom-audited** |
 | Crittenden–Vanden Eynden covering theorem | `CoveringBridge.lean` | Explicit external theorem statement; not proved in this project |
-| Theorem 1.3 upper given the classical covering theorem | `CoveringBridge.lean` | Conditional bridge; CI pending |
+| Theorem 1.3 upper given the classical covering theorem | `CoveringBridge.lean` | **Conditional theorem compiled**; external theorem unproved in this repository |
 
 ## External proof opportunity
 
@@ -33,7 +33,7 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 
 ## Remaining stages
 
-1. **Completed:** the arbitrary-gcd affine-obstruction converse, including the zero-gcd/singleton case. A combined equivalence has been added.
+1. **Completed:** the arbitrary-gcd affine-obstruction converse, including the zero-gcd/singleton case. A combined equivalence has been **compiled and axiom-audited**.
 2. Verify the bridge from the precise Crittenden–Vanden Eynden covering statement to `ResidueCoveringPrinciple`; its proof is currently conditional on the external theorem.
 3. Complete the general upper direction of Theorem 1.3.
 4. Formalize the colored-graph weighted lemma (Lemma 2.1).
@@ -46,3 +46,7 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 ## Axiom auditing
 
 `RMFormal/Schur/Audit.lean` prints Lean's reported axioms for each unconditional result. This is included in the root build. On GitHub Actions run 44524172688, all eight audited theorems reported only standard axioms (`propext`, `Classical.choice`, `Quot.sound`), with no `sorryAx`.
+
+## Latest verification
+
+[GitHub Actions run 44532837172](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44532837172) passed all 8044 build jobs. Twelve unconditional theorem axiom audits showed only `propext`, `Classical.choice`, and `Quot.sound` (some with fewer); none showed `sorryAx`. The external covering theorem is still supplied only as an **explicit hypothesis** to `two_power_upper_of_cve`.

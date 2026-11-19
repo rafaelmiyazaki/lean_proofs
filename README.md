@@ -65,6 +65,8 @@ See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md) for the detailed dependency led
 
 ## Affine-residue classification completed
 
-`ResidueNecessity.lean` proves that every finite positive set avoiding all lengths of generalized Schur solutions lies in a nonzero residue class, including singletons and the empty class. The converse is proved in `ResidueClass.lean`. A direct iff theorem, `bounded_set_no_solutions_iff_residue`, is included (awaiting CI on the updated commit).
+`ResidueNecessity.lean` proves that every finite positive set avoiding all lengths of generalized Schur solutions lies in a nonzero residue class, including singletons and the empty class. The converse is proved in `ResidueClass.lean`. A direct iff theorem, `bounded_set_no_solutions_iff_residue`, **compiled successfully** in Lean 4.28.
 
 `CoveringBridge.lean` states the classical Crittenden–Vanden Eynden covering theorem explicitly and gives a **conditional** deduction of the upper half of Theorem 1.3 from this external theorem alone. The theorem's own proof has not been imported; its formal statement is not a proof of it.
+
+**Current complete source build:** [GitHub Actions run 44532837172](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44532837172), 8044 jobs passed. The built-in axiom audit covered 12 unconditional theorems; each reported only standard foundational axioms. The complete affine-residue classification is proved. Theorem 1.1 and the general unconditional upper direction of Theorem 1.3 are not.
