@@ -14,6 +14,23 @@ certificate theorem `gcd_differences_dvd_base_forces_solution`.
 
 namespace SchurFormal
 
+/-- List gcd divides the image of each member; proved directly to avoid
+    any ambiguity between list maps and integer-cast coercions. -/
+private theorem gcd_map_dvd {ι : Type*} (xs : List ι)
+    (f : ι → ℤ) (x : ι) (hx : x ∈ xs) :
+    (integerListGcd (xs.map f) : ℤ) ∣ f x := by
+  induction xs with
+  | nil => simp at hx
+  | cons y ys ih =>
+    rcases List.mem_cons.mp hx with h | h
+    · subst x
+      simpa [integerListGcd] using
+        (Int.gcd_dvd_left (f y) (integerListGcd (ys.map f) : ℤ))
+    · exact dvd_trans
+        (by simpa [integerListGcd] using
+          (Int.gcd_dvd_right (f y) (integerListGcd (ys.map f) : ℤ)))
+        (ih h)
+
 /-- Any set represented by a finite list, with a positive base point,
     either has a generalized Schur solution or lies in a nonzero
     residue class. This is the avoidance form. -/
@@ -35,15 +52,8 @@ theorem finite_list_residue_obstruction
     exact hAvoid m hm hs
   have hdiff (x : ℕ) (hx : x ∈ A) :
       (d : ℤ) ∣ (x : ℤ) - (b : ℤ) := by
-    have hm : (x : ℤ) - (b : ℤ) ∈
-        vals.map (fun z => (z : ℤ) - (b : ℤ)) := by
-      have hcast : (x : ℤ) ∈
-          vals.map (fun z : ℕ => (z : ℤ)) :=
-        List.mem_map_of_mem (hcover x hx)
-      exact List.mem_map_of_mem hcast
-    exact integerListGcd_dvd_entry
-      (vals.map (fun z => (z : ℤ) - (b : ℤ)))
-      ((x : ℤ) - (b : ℤ)) hm
+    exact gcd_map_dvd vals
+      (fun z => (z : ℤ) - (b : ℤ)) x (hcover x hx)
   by_cases hd0 : d = 0
   · have hsame (x : ℕ) (hx : x ∈ A) : x = b := by
       have h : (0 : ℤ) ∣ (x : ℤ) - (b : ℤ) := by
