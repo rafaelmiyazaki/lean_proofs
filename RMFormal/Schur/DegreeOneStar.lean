@@ -1,4 +1,5 @@
 import RMFormal.Schur.MinColorDegree
+import RMFormal.Schur.GraphLayers
 
 /-!
 # The minimum-color-degree-one branch of weighted Lemma 2.1
