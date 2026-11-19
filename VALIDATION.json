@@ -19,7 +19,8 @@
     "gcd_one_differences_force_solution",
     "two_power_lower",
     "one_color_two",
-    "two_color_four"
+    "two_color_four",
+    "integerListGcd_dvd_entry"
   ],
   "conditional_results_verified": [
     "corollary_1_2_of_main_bound",
@@ -30,11 +31,23 @@
   "external_covering_theorem_proof_known": "https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean",
   "external_covering_proof_imported": false,
   "main_theorems_verified": false,
-  "new_commit_compilation_pending": true,
+  "new_commit_compilation_pending": false,
   "remaining": [
     "arbitrary-gcd affine obstruction",
     "Crittenden–Vanden Eynden covering theorem integration",
     "weighted local-coloring lemma",
     "Theorem 1.1"
-  ]
+  ],
+  "ci_compilation_passed_on_current_commit": true,
+  "ci_verified_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44524172688",
+  "axiom_audit": {
+    "checked": 8,
+    "source": "RMFormal/Schur/Audit.lean",
+    "observed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "sorryAx_reported": false
+  }
 }

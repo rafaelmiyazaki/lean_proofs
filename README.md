@@ -60,3 +60,5 @@ See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md) for the detailed dependency led
 `AffineRelation.lean`, `DifferenceCertificate.lean`, `BezoutList.lean`, and `GcdOne.lean` form a verified chain from an integer Bézout certificate to a generalized Schur solution. In particular, if the gcd of a finite list of differences `a_i-b` is one, the finite set supports a solution. The **arbitrary-gcd case** is not yet proved; it is needed to finish the full affine residue characterization.
 
 `RMFormal/Schur/Audit.lean` prints Lean axioms associated with the unconditional results.
+
+**Latest verified axiom audit:** [GitHub Actions run 44524172688](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44524172688). Eight unconditional theorems reported only Lean's standard foundational axioms and no `sorryAx`.

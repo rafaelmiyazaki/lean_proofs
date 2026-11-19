@@ -19,7 +19,7 @@ Source: Miyazaki, Mulrenin, Pohoată and Zheng, [arXiv:2605.15147v1](https://arx
 | Integer-affine relation implies a Schur equation | `AffineRelation.lean` | Unconditional proof compiled |
 | Explicit difference certificate gives a Schur equation | `DifferenceCertificate.lean` | Unconditional proof compiled |
 | Finite-list Bézout identity | `BezoutList.lean` | Unconditional proof compiled |
-| Gcd of integer list divides every entry | `BezoutList.lean` | Candidate proof; CI pending |
+| Gcd of integer list divides every entry | `BezoutList.lean` | Unconditional proof compiled and axiom-audited |
 | Gcd-one difference obstruction | `GcdOne.lean` | Unconditional proof compiled |
 | Weighted local-coloring Lemma 2.1 | — | Not formalized |
 | Affine obstruction converse | `TwoPower.lean` | Explicit unproved principle |
@@ -43,4 +43,4 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 
 ## Axiom auditing
 
-`RMFormal/Schur/Audit.lean` prints Lean's reported axioms for each unconditional result. This is included in the root build. CI success plus an audit free of `sorryAx` is required for future proof-completion claims.
+`RMFormal/Schur/Audit.lean` prints Lean's reported axioms for each unconditional result. This is included in the root build. On GitHub Actions run 44524172688, all eight audited theorems reported only standard axioms (`propext`, `Classical.choice`, `Quot.sound`), with no `sorryAx`.
