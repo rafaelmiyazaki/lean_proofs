@@ -52,9 +52,13 @@ theorem finite_list_residue_obstruction
     exact hAvoid m hm hs
   have hdiff (x : ℕ) (hx : x ∈ A) :
       (d : ℤ) ∣ (x : ℤ) - (b : ℤ) := by
+    have hcast : (x : ℤ) ∈ (vals : List ℤ) := by
+      simpa using (List.mem_map_of_mem
+        (f := fun z : ℕ => (z : ℤ)) (hcover x hx))
     simpa only [d] using
-      (gcd_map_dvd vals (fun z => (z : ℤ) - (b : ℤ))
-        x (hcover x hx))
+      (gcd_map_dvd (vals : List ℤ)
+        (fun z : ℤ => z - (b : ℤ))
+        (x : ℤ) hcast)
   by_cases hd0 : d = 0
   · have hsame (x : ℕ) (hx : x ∈ A) : x = b := by
       have h : (0 : ℤ) ∣ (x : ℤ) - (b : ℤ) := by
