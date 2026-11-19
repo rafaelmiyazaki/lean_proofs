@@ -6,7 +6,7 @@
   "mathlib": "v4.28.0",
   "verification_status": "PARTIAL_FORMALIZATION",
   "source_build_passed": true,
-  "latest_verified_source_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44583357689",
+  "latest_verified_source_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44588386054",
   "expanded_axiom_audit_pending": true,
   "audited_theorem_count_target": 45,
   "previously_audited_unconditional_theorems": 26,
@@ -46,5 +46,14 @@
     "integrate or independently prove Crittenden–Vanden Eynden covering theorem",
     "discharge conditional Corollary 1.2",
     "statement fidelity and final axiom audit"
+  ],
+  "degree_one_mass_preserving_deletion_verified": true,
+  "weighted_local_coloring_lemma_verified": false,
+  "new_commit_compilation_pending": true,
+  "unconditional_results_verified": [
+    "incident_degree_one_uniform_star",
+    "degree_one_color_ball_is_univ",
+    "exists_heavy_independent_class",
+    "degree_one_mass_preserving_induced_subgraph"
   ]
 }

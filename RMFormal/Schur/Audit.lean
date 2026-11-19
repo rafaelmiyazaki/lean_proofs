@@ -81,3 +81,10 @@ are not unproved statements of the research paper.
 #print axioms SchurFormal.exists_large_finset_color
 #print axioms SchurFormal.exists_heavy_incident_color
 #print axioms SchurFormal.heavy_neighbor_seed_mass
+
+-- Minimum color-degree-one induction case
+import RMFormal.Schur.DegreeOneMassStep
+#print axioms SchurFormal.independent_class_proper
+#print axioms SchurFormal.degree_one_color_ball_is_univ
+#print axioms SchurFormal.exists_heavy_independent_class
+#print axioms SchurFormal.degree_one_mass_preserving_induced_subgraph

@@ -38,7 +38,10 @@
 | Strong induction on vertex count | `MassInduction.lean` | Verified **conditional implication** |
 | Numeric conclusion from total mass `≤1` | `FinalWeightBound.lean` | Verified **conditional implication** |
 | Complete weighted bound from universal proper mass-nondecreasing deletion principle | `WeightedLemmaReduction.lean` | Verified **conditional implication** |
-| **Construct proper mass-nondecreasing deletion for every nontrivial induced colored complete graph** | — | **OPEN: main mathematical obligation** |
+| Degree-one monochromatic star and full radius-one ball | `DegreeOneStar.lean` | **Unconditional Lean proofs compiled** |
+| Heavy independent class from a proper local coloring | `HeavyIndependentClass.lean` | **Unconditional Lean proof compiled** |
+| **Case d=1 of weighted deletion, mass-preserving and strictly smaller** | `DegreeOneMassStep.lean` | **Unconditional Lean implication compiled**, given the specified proper coloring |
+| **Construct proper mass-nondecreasing deletion for every nontrivial induced colored complete graph** | — | **OPEN: d≥2 branch and final universal deletion theorem** |
 | Complete weighted Lemma 2.1 | — | **OPEN** |
 
 ## Other obligations
@@ -52,3 +55,7 @@ Review statement fidelity before declaring a complete paper formalization: numbe
 ## Verification
 
 The most recent successfully compiled source commit before this ledger update is [GitHub Actions run 44583357689](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44583357689), with **8,066 jobs**. That run includes every source file listed above. The extended axiom audit is part of the next commit. The final `#print axioms` results must be checked on that commit; `sorryAx` must be absent.
+
+## New exact Case 1 verification
+
+[GitHub Actions run 44588386054](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44588386054) successfully compiled the full minimum incident-color-degree-one branch: under the paper's local proper-coloring hypothesis, `degree_one_mass_preserving_induced_subgraph` constructs a proper induced subgraph with no smaller exact real total weight. The proof uses symmetry of the edge coloring, the uniform-color star, a heavy independent fiber, and the weighted graph deletion estimate. The case of minimum incident color-degree at least two remains open.

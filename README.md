@@ -52,3 +52,7 @@ lake build
 GitHub Actions runs on every push and pull request. [Last green source build before the expanded audit](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44583357689): **8,066 jobs**, successful. The expanded `Audit.lean` checks are being run on the next commit. **Never infer verification of a new commit from an older green build.**
 
 A successful `lake build` verifies the Lean propositions and their proofs. It does not certify that the propositions exactly reproduce the natural-language manuscript; the statement audit remains essential.
+
+### Full d=1 deletion case compiled
+
+The new `DegreeOneStar.lean`, `HeavyIndependentClass.lean`, and `DegreeOneMassStep.lean` modules complete the **d_col(v)=1 branch** of the weighted local-coloring induction (given a proper coloring of the monochromatic graph, as in the manuscript). The result constructs a strictly smaller induced subgraph whose exact real vertex-weight sum is no smaller. This was checked in [CI run 44588386054](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44588386054) (8072 jobs). The d≥2 branch and the full Lemma 2.1 are not yet verified.
