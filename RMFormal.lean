@@ -83,3 +83,5 @@ import RMFormal.Schur.HeavyIndependentClass
 import RMFormal.Schur.DegreeOneMassStep
 
 import RMFormal.Schur.BallMass
+
+import RMFormal.Schur.ColorBallIncident
