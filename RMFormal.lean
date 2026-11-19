@@ -113,3 +113,5 @@ import RMFormal.Schur.FiniteDifferenceWalk
 import RMFormal.Schur.FiniteSchurRealBound
 
 import RMFormal.Schur.SchurPowerConversion
+
+import RMFormal.Schur.MainTheorem11
