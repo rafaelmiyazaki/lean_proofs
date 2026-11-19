@@ -67,7 +67,7 @@ theorem degree_one_mass_preserving_induced_subgraph
         rw [hSym x v]
         exact hvc
       exact Finset.mem_image.mpr
-        ⟨v, Finset.mem_erase.mpr ⟨hxv, Finset.mem_univ _⟩,
+        ⟨v, Finset.mem_erase.mpr ⟨hxv.symm, Finset.mem_univ _⟩,
           hxc⟩
   have hPsubU : P ⊆ (Finset.univ : Finset V) := hPSub
   have hClosure :
