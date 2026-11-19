@@ -62,3 +62,9 @@ See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md) for the detailed dependency led
 `RMFormal/Schur/Audit.lean` prints Lean axioms associated with the unconditional results.
 
 **Latest verified axiom audit:** [GitHub Actions run 44524172688](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44524172688). Eight unconditional theorems reported only Lean's standard foundational axioms and no `sorryAx`.
+
+## Affine-residue classification completed
+
+`ResidueNecessity.lean` proves that every finite positive set avoiding all lengths of generalized Schur solutions lies in a nonzero residue class, including singletons and the empty class. The converse is proved in `ResidueClass.lean`. A direct iff theorem, `bounded_set_no_solutions_iff_residue`, is included (awaiting CI on the updated commit).
+
+`CoveringBridge.lean` states the classical Crittenden–Vanden Eynden covering theorem explicitly and gives a **conditional** deduction of the upper half of Theorem 1.3 from this external theorem alone. The theorem's own proof has not been imported; its formal statement is not a proof of it.

@@ -121,4 +121,17 @@ theorem two_power_upper_of_covering
     TwoPowerUpper :=
   two_power_upper_of_principles residue_obstruction_principle hcover
 
+/-- Exact finite-set characterization, combining both formally
+    verified directions of the affine-residue obstruction. -/
+theorem bounded_set_no_solutions_iff_residue
+    (A : Set ℕ) (N : ℕ)
+    (hA : ∀ x ∈ A, x ∈ PositiveInterval N) :
+    (∀ m : ℕ, 0 < m → ¬ HasEquation A (m + 1) m) ↔
+      ∃ d a : ℕ, 2 ≤ d ∧ 0 < a ∧ a < d ∧
+        ∀ x ∈ A, x % d = a := by
+  constructor
+  · exact residue_obstruction_principle N A hA
+  · rintro ⟨d, a, _, ha, halt, hres⟩ m _
+    exact nonzero_residue_avoids_all_lengths ha halt hres m
+
 end SchurFormal

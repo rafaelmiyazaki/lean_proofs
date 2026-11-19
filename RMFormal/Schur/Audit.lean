@@ -17,3 +17,9 @@ are not unproved statements of the research paper.
 #print axioms SchurFormal.gcd_one_differences_force_solution
 #print axioms SchurFormal.two_power_lower
 #print axioms SchurFormal.two_color_four
+
+-- New affine-obstruction results
+#print axioms SchurFormal.base_difference_certificate_forces_solution
+#print axioms SchurFormal.gcd_differences_dvd_base_forces_solution
+#print axioms SchurFormal.residue_obstruction_principle
+#print axioms SchurFormal.bounded_set_no_solutions_iff_residue

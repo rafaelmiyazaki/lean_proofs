@@ -22,8 +22,10 @@ Source: Miyazaki, Mulrenin, Pohoată and Zheng, [arXiv:2605.15147v1](https://arx
 | Gcd of integer list divides every entry | `BezoutList.lean` | Unconditional proof compiled and axiom-audited |
 | Gcd-one difference obstruction | `GcdOne.lean` | Unconditional proof compiled |
 | Weighted local-coloring Lemma 2.1 | — | Not formalized |
-| Affine obstruction converse | `TwoPower.lean` | Explicit unproved principle |
-| Crittenden–Vanden Eynden covering theorem | `TwoPower.lean` | Explicit unproved principle in this project |
+| Affine obstruction converse | `ResidueNecessity.lean` | **Unconditional Lean proof compiled** |
+| Complete finite affine-obstruction equivalence | `ResidueNecessity.lean` | Combined theorem; current commit CI pending |
+| Crittenden–Vanden Eynden covering theorem | `CoveringBridge.lean` | Explicit external theorem statement; not proved in this project |
+| Theorem 1.3 upper given the classical covering theorem | `CoveringBridge.lean` | Conditional bridge; CI pending |
 
 ## External proof opportunity
 
@@ -31,8 +33,8 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 
 ## Remaining stages
 
-1. Complete the **arbitrary-gcd case** of the affine-obstruction converse. The gcd-one case and finite Bézout coefficients are proved.
-2. Connect the covering theorem to `ResidueCoveringPrinciple` with compatible Lean and Mathlib versions.
+1. **Completed:** the arbitrary-gcd affine-obstruction converse, including the zero-gcd/singleton case. A combined equivalence has been added.
+2. Verify the bridge from the precise Crittenden–Vanden Eynden covering statement to `ResidueCoveringPrinciple`; its proof is currently conditional on the external theorem.
 3. Complete the general upper direction of Theorem 1.3.
 4. Formalize the colored-graph weighted lemma (Lemma 2.1).
 5. Prove the main quantitative bound (Theorem 1.1), then discharge the assumption in Corollary 1.2.

@@ -20,7 +20,10 @@
     "two_power_lower",
     "one_color_two",
     "two_color_four",
-    "integerListGcd_dvd_entry"
+    "integerListGcd_dvd_entry",
+    "base_difference_certificate_forces_solution",
+    "gcd_differences_dvd_base_forces_solution",
+    "residue_obstruction_principle"
   ],
   "conditional_results_verified": [
     "corollary_1_2_of_main_bound",
@@ -31,7 +34,7 @@
   "external_covering_theorem_proof_known": "https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean",
   "external_covering_proof_imported": false,
   "main_theorems_verified": false,
-  "new_commit_compilation_pending": false,
+  "new_commit_compilation_pending": true,
   "remaining": [
     "arbitrary-gcd affine obstruction",
     "Crittenden–Vanden Eynden covering theorem integration",
@@ -49,5 +52,8 @@
       "Quot.sound"
     ],
     "sorryAx_reported": false
-  }
+  },
+  "full_affine_obstruction_principle_verified": true,
+  "full_affine_obstruction_iff_verified_on_new_commit": false,
+  "outstanding_external_covering_proof": true
 }
