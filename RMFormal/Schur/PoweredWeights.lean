@@ -35,6 +35,7 @@ theorem powered_color_weight_step
   simp only [poweredColorWeight, Nat.succ_sub_one,
     Nat.succ_mul, pow_add, Nat.factorial_succ, Nat.cast_mul]
   field_simp
+  push_cast
   ring
 
 end SchurFormal
