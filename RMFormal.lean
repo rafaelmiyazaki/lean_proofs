@@ -111,3 +111,5 @@ import RMFormal.Schur.FiniteDifferenceGraph
 import RMFormal.Schur.FiniteDifferenceWalk
 
 import RMFormal.Schur.FiniteSchurRealBound
+
+import RMFormal.Schur.SchurPowerConversion
