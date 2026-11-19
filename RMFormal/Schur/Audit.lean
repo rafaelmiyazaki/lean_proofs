@@ -1,3 +1,4 @@
+import RMFormal.Schur.DegreeOneMassStep
 import RMFormal.Schur.GcdOne
 import RMFormal.Schur.ResidueNecessity
 import RMFormal.Schur.ColorPaths
@@ -83,7 +84,6 @@ are not unproved statements of the research paper.
 #print axioms SchurFormal.heavy_neighbor_seed_mass
 
 -- Minimum color-degree-one induction case
-import RMFormal.Schur.DegreeOneMassStep
 #print axioms SchurFormal.independent_class_proper
 #print axioms SchurFormal.degree_one_color_ball_is_univ
 #print axioms SchurFormal.exists_heavy_independent_class
