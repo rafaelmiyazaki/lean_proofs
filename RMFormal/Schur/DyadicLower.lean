@@ -28,6 +28,8 @@ private lemma dyadicColor_succ_even (k n : ℕ) (j : Fin (k + 1))
   have hnotodd : n % 2 ≠ 1 := by
     intro hodd
     simp [dyadicColor, hodd] at h
+    have hv := congrArg Fin.val h
+    simp at hv
   have heven : n % 2 = 0 := by omega
   have hs : (dyadicColor k (n / 2)).succ = j.succ := by
     simpa [dyadicColor, heven] using h
@@ -42,7 +44,7 @@ private lemma sum_ones (xs : List ℕ)
     have htail : ∀ y ∈ xs, y = 1 := by
       intro y hy
       exact h y (by simp [hy])
-    simp [hx, ih htail]
+    simpa [hx, ih htail, Nat.add_comm]
 
 private lemma sum_half_of_even (xs : List ℕ)
     (h : ∀ x ∈ xs, x % 2 = 0) :
