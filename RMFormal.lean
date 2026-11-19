@@ -21,3 +21,5 @@ import RMFormal.Schur.GcdOne
 import RMFormal.Schur.Audit
 
 import RMFormal.Schur.ArbitraryGcd
+
+import RMFormal.Schur.ResidueNecessity
