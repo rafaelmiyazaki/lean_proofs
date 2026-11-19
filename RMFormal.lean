@@ -109,3 +109,5 @@ import RMFormal.Schur.WeightedLemma21
 import RMFormal.Schur.FiniteDifferenceGraph
 
 import RMFormal.Schur.FiniteDifferenceWalk
+
+import RMFormal.Schur.FiniteSchurRealBound
