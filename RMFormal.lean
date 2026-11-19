@@ -31,3 +31,5 @@ import RMFormal.Schur.ChargeClasses
 import RMFormal.Schur.ChargeColoring
 
 import RMFormal.Schur.ColorPaths
+
+import RMFormal.Schur.PoweredWeights
