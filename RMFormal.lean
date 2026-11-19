@@ -55,3 +55,5 @@ import RMFormal.Schur.MassAccounting
 import RMFormal.Schur.DeletionSize
 
 import RMFormal.Schur.RealWeights
+
+import RMFormal.Schur.WeightGain
