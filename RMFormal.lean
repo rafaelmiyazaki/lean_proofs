@@ -45,3 +45,5 @@ import RMFormal.Schur.ColorDegrees
 import RMFormal.Schur.ColorDeletion
 
 import RMFormal.Schur.ColorFiberMass
+
+import RMFormal.Schur.GraphLayers
