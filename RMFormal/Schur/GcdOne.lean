@@ -27,7 +27,7 @@ private lemma zip_support {A : Set ℕ} (vals : List ℕ) (cs : List ℤ)
     | cons c cs =>
       intro p hp
       rcases List.mem_cons.mp hp with hfirst | hrest
-      · have hpx : p.1 = x := (congrArg Prod.fst hfirst).symm
+      · have hpx : p.1 = x := congrArg Prod.fst hfirst
         exact hpx.symm ▸ hv x (by simp)
       · exact ih cs (by
           intro y hy
