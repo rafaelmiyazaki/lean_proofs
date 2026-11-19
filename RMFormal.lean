@@ -103,3 +103,5 @@ import RMFormal.Schur.InducedBallColoring
 import RMFormal.Schur.InducedWeightTransport
 
 import RMFormal.Schur.UniversalWeightedInduction
+
+import RMFormal.Schur.WeightedLemma21
