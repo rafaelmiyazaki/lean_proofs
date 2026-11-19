@@ -32,7 +32,7 @@ theorem incident_color_of_walk
       exact ih
     · apply Finset.mem_image.mpr
       refine ⟨b, Finset.mem_erase.mpr ⟨?_, Finset.mem_univ _⟩, ?_⟩
-      · exact fun h => hEq h.symm
+      · exact hEq
       · rw [hSym dest b]
         exact hedge
 
@@ -46,6 +46,7 @@ theorem incident_color_of_ball
     (i : ℕ) (x : V)
     (hx : x ∈ singleColorBall E c a i) :
     c ∈ incidentColors E Finset.univ x := by
+  classical
   have hreach : WithinSingleColorRadius E c a i x := by
     unfold singleColorBall at hx
     exact (Finset.mem_filter.mp hx).2
