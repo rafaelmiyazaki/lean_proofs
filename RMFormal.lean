@@ -13,3 +13,5 @@ import RMFormal.Schur.SmallThresholds
 import RMFormal.Schur.AffineRelation
 
 import RMFormal.Schur.DifferenceCertificate
+
+import RMFormal.Schur.BezoutList
