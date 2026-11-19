@@ -43,3 +43,5 @@ import RMFormal.Schur.HeavyClass
 import RMFormal.Schur.ColorDegrees
 
 import RMFormal.Schur.ColorDeletion
+
+import RMFormal.Schur.ColorFiberMass
