@@ -45,7 +45,8 @@ private lemma zip_difference_sum (vals : List ℕ)
     cases cs with
     | nil => simp
     | cons c cs =>
-      simp [List.zip, List.zipWith, ih, mul_comm]
+      simp [List.zip, List.zipWith, mul_comm]
+      simpa [List.zip, List.zipWith, mul_comm] using ih cs
 
 /-- If the integer differences in a finite list have gcd one,
     they generate a generalized Schur equation. -/
@@ -61,7 +62,8 @@ theorem gcd_one_differences_force_solution
   have hsum :
       (List.zipWith (fun x c => x * c)
         (vals.map (fun x => (x : ℤ) - (b : ℤ))) cs).sum = 1 := by
-    simpa [hgcd] using hbez
+    rw [hgcd] at hbez
+    simpa using hbez
   have hcertificate :
       ((vals.zip cs).map (fun p =>
         p.2 * ((p.1 : ℤ) - (b : ℤ)))).sum = 1 := by
