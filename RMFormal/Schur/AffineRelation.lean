@@ -34,7 +34,8 @@ private lemma repeatWith_sum {ι : Type*} (xs : List ι) (a : ι → ℕ)
   induction xs with
   | nil => simp [repeatWith]
   | cons i xs ih =>
-    simp [repeatWith, ih, Nat.add_comm]
+    simp [repeatWith]
+    exact ih
 
 private lemma repeatWith_support {ι : Type*} (xs : List ι)
     (a : ι → ℕ) (count : ι → ℕ) {A : Set ℕ}
