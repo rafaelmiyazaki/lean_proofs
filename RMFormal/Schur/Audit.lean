@@ -1,6 +1,7 @@
 import RMFormal.Schur.GcdOne
 import RMFormal.Schur.ResidueNecessity
 import RMFormal.Schur.ColorPaths
+import RMFormal.Schur.PoweredWeights
 import RMFormal.Schur.DyadicLower
 import RMFormal.Schur.SmallThresholds
 
@@ -31,3 +32,6 @@ are not unproved statements of the research paper.
 #print axioms SchurFormal.reachable_has_charge_coloring
 #print axioms SchurFormal.differencePath_has_short_rep
 #print axioms SchurFormal.radius_ball_charge_coloring
+
+-- Arithmetic of weighted local coloring
+#print axioms SchurFormal.powered_color_weight_step

@@ -25,7 +25,8 @@ Source: Miyazaki, Mulrenin, Pohoată and Zheng, [arXiv:2605.15147v1](https://arx
 | Finite-list Bézout identity | `BezoutList.lean` | Unconditional proof compiled |
 | Gcd of integer list divides every entry | `BezoutList.lean` | Unconditional proof compiled and axiom-audited |
 | Gcd-one difference obstruction | `GcdOne.lean` | Unconditional proof compiled |
-| Weighted local-coloring Lemma 2.1 | — | Not formalized |
+| Weighted local-coloring vertex-weight factorial update | `PoweredWeights.lean` | **Unconditional Lean proof compiled** |
+| Weighted local-coloring Lemma 2.1 | — | Main colored-graph induction not yet formalized |
 | Affine obstruction converse | `ResidueNecessity.lean` | **Unconditional Lean proof compiled** |
 | Complete finite affine-obstruction equivalence | `ResidueNecessity.lean` | **Unconditional Lean theorem compiled and axiom-audited** |
 | Crittenden–Vanden Eynden covering theorem | `CoveringBridge.lean` | Explicit external theorem statement; not proved in this project |
@@ -58,3 +59,7 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 ## Section 3 development
 
 [GitHub Actions run 44541329817](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44541329817) compiled the `ChargeClasses.lean`, `ChargeColoring.lean`, and `ColorPaths.lean` modules. The new `#print axioms` entries are included in the next build; their audit results should be checked there.
+
+## Weight-step arithmetic
+
+The elementary identity for mth-powered weights was verified in [GitHub Actions run 44542819201](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44542819201). The unpowered vertex mass sum and the central inductive deletion argument are still missing; the powered identity alone is insufficient to establish Lemma 2.1.

@@ -80,3 +80,7 @@ The following three new modules are **compiled** in [GitHub Actions run 44541329
 - `ColorPaths.lean`: every graph walk of length at most `m` yields the needed signed representation, so the radius-`m` ball is `(2*m+1)`-colorable.
 
 The color path is represented inductively and may repeat vertices. The local coloring uses the difference graph on natural numbers, which contains all graph walks in the complete graph on the finite interval. The central weighted local-coloring Lemma 2.1 and the full quantitative Theorem 1.1 are **not** yet proved.
+
+## First weighted-lemma arithmetic component
+
+`PoweredWeights.lean` formalizes the mth power of the vertex weight `W(d)=1/(χ^(d*m)*d!)` over `ℚ`, and proves the exact update identity `W(d-1)=χ^m*d*W(d)` for positive χ,d. Its proof compiled in [GitHub Actions run 44542819201](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44542819201). This is *not* a proof of the weighted local-coloring lemma; the graph-theoretic induction remains unformalized.

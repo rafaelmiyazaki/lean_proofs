@@ -29,7 +29,8 @@
     "same_charge_no_edge",
     "reachable_has_charge_coloring",
     "differencePath_has_short_rep",
-    "radius_ball_charge_coloring"
+    "radius_ball_charge_coloring",
+    "powered_color_weight_step"
   ],
   "conditional_results_verified": [
     "corollary_1_2_of_main_bound",
@@ -63,7 +64,8 @@
   "full_affine_obstruction_principle_verified": true,
   "full_affine_obstruction_iff_verified_on_new_commit": true,
   "outstanding_external_covering_proof": true,
-  "latest_verified_source_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44541329817",
+  "latest_verified_source_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44542819201",
   "weighted_local_coloring_lemma_verified": false,
-  "charge_local_ball_coloring_verified": true
+  "charge_local_ball_coloring_verified": true,
+  "weighted_vertex_powered_factorial_identity_verified": true
 }
