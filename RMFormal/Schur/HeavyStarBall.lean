@@ -59,7 +59,10 @@ theorem heavy_star_mass_le_ball_one
     intro x hx
     by_cases h : E v x = c
     · simp [h]
-    · simp [h, eq_comm]
+    · have hc : c ≠ E v x := by
+        intro hc
+        exact h hc.symm
+      simp [h, hc]
   have hSubset :
       (∑ x ∈ insert v star, w x) ≤
         ∑ x ∈ singleColorBall E c v 1, w x :=
