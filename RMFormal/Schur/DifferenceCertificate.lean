@@ -56,7 +56,7 @@ theorem difference_certificate_forces_solution
     · have hpb : p.2 = b := congrArg Prod.snd hfirst
       exact hpb.symm ▸ hb
     · obtain ⟨i, hi, heq⟩ := List.mem_map.mp hrest
-      have hpa : p.2 = a i := by simpa [heq]
+      have hpa : p.2 = a i := (congrArg Prod.snd heq).symm
       exact hpa.symm ▸ hmem i hi
   have hcount : (pairs.map Prod.fst).sum = 1 := by
     simp only [pairs, List.map_cons, List.sum_cons, List.map_map]
