@@ -35,3 +35,5 @@ import RMFormal.Schur.ColorPaths
 import RMFormal.Schur.PoweredWeights
 
 import RMFormal.Schur.SlowGrowth
+
+import RMFormal.Schur.WeightedDeletion
