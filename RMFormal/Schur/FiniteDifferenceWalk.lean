@@ -22,7 +22,7 @@ theorem finite_color_walk_to_difference_path
   | nil =>
     exact ⟨0, by omega, DifferencePath.nil _⟩
   | snoc hprev hedge ih =>
-    rename_i first b d steps
+    rename_i b d steps
     obtain ⟨k, hk, hDiff⟩ := ih
     by_cases hEq : b = d
     · subst d
