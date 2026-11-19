@@ -79,3 +79,5 @@ import RMFormal.Schur.MinHeavySeed
 import RMFormal.Schur.DegreeOneStar
 
 import RMFormal.Schur.HeavyIndependentClass
+
+import RMFormal.Schur.DegreeOneMassStep
