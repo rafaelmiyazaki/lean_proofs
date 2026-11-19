@@ -18,7 +18,7 @@ lemma repeatList_length (xs : List ℕ) (t : ℕ) :
   | zero => simp [repeatList]
   | succ t ih =>
     simp only [repeatList, List.length_append, ih]
-    simp [Nat.succ_mul, Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+    simp [Nat.succ_mul, Nat.add_comm]
 
 lemma repeatList_sum (xs : List ℕ) (t : ℕ) :
     (repeatList xs t).sum = t * xs.sum := by
@@ -26,7 +26,7 @@ lemma repeatList_sum (xs : List ℕ) (t : ℕ) :
   | zero => simp [repeatList]
   | succ t ih =>
     simp only [repeatList, List.sum_append, ih]
-    simp [Nat.succ_mul, Nat.add_comm, Nat.add_left_comm, Nat.add_assoc]
+    simp [Nat.succ_mul, Nat.add_comm]
 
 lemma repeatList_mem (xs : List ℕ) (t : ℕ) (z : ℕ)
     (hz : z ∈ repeatList xs t) : z ∈ xs := by

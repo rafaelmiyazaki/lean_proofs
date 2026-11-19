@@ -11,7 +11,7 @@ namespace SchurFormal
 
 theorem corollary_1_2_of_main_bound
     (main : MainBoundPowered)
-    (m r N d w : ℕ) (hm : 0 < m) (hr : 0 < r) (hd : 0 < d)
+    (m r N d w : ℕ) (hm : 0 < m) (hr : 0 < r) (_hd : 0 < d)
     (color : ℕ → Fin r)
     (hAvoid : ∀ i : Fin r,
       ¬ HasEquation (ColorClass N color i)

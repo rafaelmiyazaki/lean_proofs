@@ -2,13 +2,27 @@
   "paper": "Improved Ramsey Bounds for Generalized Schur Equations",
   "source": "arXiv:2605.15147v1",
   "date": "2026-11-18",
+  "lean": "4.28.0",
+  "mathlib": "v4.28.0",
+  "ci_reference_pre_doc_update": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44444537121",
   "compilation_attempted_in_authoring_environment": false,
-  "compilation_passed": null,
-  "verification_status": "DRAFT_ONLY",
-  "main_theorems_verified": false,
-  "external_dependencies": [
-    "affine residue obstruction converse",
-    "Crittenden–Vanden Eynden covering theorem",
-    "weighted local-coloring lemma"
-  ]
+  "ci_compilation_passed_on_previous_commit": true,
+  "verification_status": "PARTIAL_FORMALIZATION",
+  "unconditional_results_verified": [
+    "padding_lemma_3_1",
+    "equal_charge_cross_counts",
+    "cross_count_le",
+    "nonzero_residue_avoids_all_lengths",
+    "two_power_lower",
+    "one_color_two",
+    "two_color_four"
+  ],
+  "conditional_results_verified": [
+    "corollary_1_2_of_main_bound",
+    "two_power_upper_of_principles"
+  ],
+  "main_quantitative_theorem_verified": false,
+  "theorem_1_3_upper_all_r_verified": false,
+  "external_covering_theorem_proof_known": "https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean",
+  "external_covering_proof_imported": false
 }

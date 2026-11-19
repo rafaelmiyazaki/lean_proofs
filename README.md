@@ -1,18 +1,35 @@
 # Lean formalizations — Rafael Miyazaki
 
-Lean 4 / Mathlib repository for research formalization in combinatorics.
+Lean 4 / Mathlib repository for research formalizations in combinatorics.
 
-## Initial paper
+## First paper
 
 **Rafael Miyazaki, Eion Mulrenin, Cosmin Pohoată, Michael Zheng**, *Improved Ramsey Bounds for Generalized Schur Equations*, [arXiv:2605.15147](https://arxiv.org/abs/2605.15147).
 
-This branch contains formal theorem **statements**, mathematical definitions and **candidate proof scripts** for foundational lemmas. The main research results remain unproved, and some reductions use explicit unproved hypotheses. See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md).
+The project has **successfully compiled with Lean 4.28 and Mathlib** on GitHub Actions. Its individual theorems are distinguished below; this does **not** constitute a complete formalization of the paper.
 
-### Trust status
+### Verified without research hypotheses
 
-The source was generated without a local Lean compiler. **Do not call any result machine-verified until GitHub CI's `lake build` succeeds.** Compilation, even if successful, does **not** establish that the paper's main results are proved.
+- **Lemma 3.1** (repetition/padding of solutions): `padding_lemma_3_1`.
+- **Charge-count arithmetic**: `equal_charge_cross_counts` and `cross_count_le`.
+- **Sufficient residue-class obstruction**: `nonzero_residue_avoids_all_lengths`.
+- **Theorem 1.3, lower/optimality direction for every positive number of colors**: `two_power_lower` (a constructive recursive coloring of `[2^r-1]`).
+- **Theorem 1.3, upper direction for one and two colors**: `one_color_two` and `two_color_four`.
 
-### Building
+### Compiled but conditional
+
+- Corollary 1.2 is derived assuming `MainBoundPowered` (Theorem 1.1).
+- The upper direction of Theorem 1.3 for general `r` follows from two **explicitly unproved** principles: `ResidueObstructionPrinciple` and `ResidueCoveringPrinciple`.
+
+### Not yet proved
+
+- Theorem 1.1, which depends on weighted local-coloring Lemma 2.1.
+- The affine obstruction converse in Section 4.
+- The general upper direction of Theorem 1.3.
+
+A separate public Lean formalization of the **Crittenden–Vanden Eynden covering theorem** exists at [Erdős Problem 275](https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean), in Lean 4.33. The upstream repository currently has no declared license; its code has **not** been copied or imported. Integrating its proof requires a compatible environment and appropriate licensing permission.
+
+## Build
 
 Install [elan](https://github.com/leanprover/elan), then:
 
@@ -22,17 +39,18 @@ lake exe cache get
 lake build
 ```
 
-GitHub Actions triggers a build on each push and pull request.
+Each push and pull request triggers GitHub Actions. The status of a **particular commit** is authoritative; success on an older commit does not certify subsequent edits.
 
-### Project structure
+## Modules
 
-- `RMFormal/Schur/Definitions.lean`: generalized Schur equations, finite intervals and coloring propositions.
-- `RMFormal/Schur/Padding.lean`: repetition/padding lemma, draft proof.
-- `RMFormal/Schur/Charge.lean`: arithmetic of charged representations, draft proof.
-- `RMFormal/Schur/ResidueClass.lean`: sufficient residue obstruction, draft proof.
-- `RMFormal/Schur/Corollary.lean`: logical reduction of Corollary 1.2 from Theorem 1.1.
-- `RMFormal/Schur/TwoPower.lean`: logical reduction of half of Theorem 1.3.
-- `RMFormal/Schur/SmallCases.lean`: elementary example.
-- `PROOF_OBLIGATIONS.md`: remaining mathematical work.
+- `Definitions.lean` — exact list-based equations and coloring propositions.
+- `Padding.lean` — Lemma 3.1.
+- `Charge.lean` — elementary charge-count arithmetic.
+- `ResidueClass.lean` — nonzero residue-class obstruction.
+- `DyadicLower.lean` — unconditional proof of the optimality half of Theorem 1.3.
+- `SmallThresholds.lean` — exact two-color upper threshold.
+- `SmallCases.lean` — one-color upper threshold.
+- `Corollary.lean` — conditional deduction of Corollary 1.2.
+- `TwoPower.lean` — conditional reduction of the remaining half of Theorem 1.3.
 
-The intent is to turn this draft into a completely compiled repository, then formally prove the difficult mathematical inputs one by one.
+See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md) for the detailed dependency ledger.
