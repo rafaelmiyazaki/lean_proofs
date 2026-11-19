@@ -1,37 +1,47 @@
 # Lean formalizations — Rafael Miyazaki
 
-Lean 4 / Mathlib repository for research formalizations in combinatorics.
+Lean 4 / Mathlib formalization of mathematical results, beginning with **Miyazaki, Mulrenin, Pohoată and Zheng**, [*Improved Ramsey Bounds for Generalized Schur Equations*](https://arxiv.org/abs/2605.15147).
 
-## First paper
+**Status: partial formalization, not a complete proof of the paper.** The branch `schur-formalization-draft` is a draft pull request. See [the proof ledger](PROOF_OBLIGATIONS.md) and [machine-readable status](VALIDATION.json).
 
-**Rafael Miyazaki, Eion Mulrenin, Cosmin Pohoată, Michael Zheng**, *Improved Ramsey Bounds for Generalized Schur Equations*, [arXiv:2605.15147](https://arxiv.org/abs/2605.15147).
+## Unconditionally checked results
 
-The project has **successfully compiled with Lean 4.28 and Mathlib** on GitHub Actions. Its individual theorems are distinguished below; this does **not** constitute a complete formalization of the paper.
+- Padding lemma, integer affine sign splitting, finite-list Bézout certificates.
+- Exact affine-residue characterization of finite sets avoiding all `(m+1,m)` Schur equations.
+- Theorem 1.3 lower/optimality direction for all positive `r` via a dyadic coloring; upper direction for `r=1,2`.
+- Charge-class independence and a proper `2m+1` coloring of monochromatic difference-graph radius-`m` balls.
+- Numerical, real-weight and finite-graph ingredients of Lemma 2.1: factorial weight update, monotonicity, sharp gain from losing a color, slow-growth layer, finite weighted averaging, explicit graph-layer deletion, exact mass accounting, strict vertex reduction, strong induction, and extraction of the `χ^q(q!)^(1/ell)` bound **from the mass hypothesis**.
+- Heavy incident-color selection and the strict `W/d` lower bound for the selected closed neighborhood.
 
-### Verified without research hypotheses
+All statements named above have Lean proof scripts with no `sorry` or custom `axiom`; a passing build checks them. The complete finite-graph weighted lemma is **still not proved**.
 
-- **Lemma 3.1** (repetition/padding of solutions): `padding_lemma_3_1`.
-- **Charge-count arithmetic**: `equal_charge_cross_counts` and `cross_count_le`.
-- **Sufficient residue-class obstruction**: `nonzero_residue_avoids_all_lengths`.
-- **Theorem 1.3, lower/optimality direction for every positive number of colors**: `two_power_lower` (a constructive recursive coloring of `[2^r-1]`).
-- **Theorem 1.3, upper direction for one and two colors**: `one_color_two` and `two_color_four`.
+## Compiled but conditional results
 
-### Compiled but conditional
+- **Theorem 1.3 upper half (all `r`)**: `two_power_upper_of_cve` assumes the Crittenden–Vanden Eynden covering theorem; the covering theorem has **not** been proved or imported into this project.
+- **Corollary 1.2**: `corollary_1_2_of_main_bound` assumes Theorem 1.1.
+- **Numerical weighted local bound**: `weighted_local_bound_of_deletion_principle` assumes that *every* nontrivial induced colored graph has a proper induced subgraph with no smaller exact mass. This is precisely the remaining inductive selection principle, not an unconditional proof of Lemma 2.1.
 
-- Corollary 1.2 is derived assuming `MainBoundPowered` (Theorem 1.1).
-- The upper direction of Theorem 1.3 for general `r` follows from two **explicitly unproved** principles: `ResidueObstructionPrinciple` and `ResidueCoveringPrinciple`.
+## Main unresolved work
 
-### Not yet proved
+1. **Prove the structural selection step in Lemma 2.1:** starting at a minimum-color-degree vertex, select a heavy incident color, find the slow-growth radius layer, choose a heavy independent class, and show the required proper vertex deletion works in every induced colored complete graph. The numerical and per-vertex estimates have been verified separately.
+2. **Deduce Theorem 1.1** from the completed weighted local-coloring lemma, and discharge the assumption in Corollary 1.2.
+3. **Complete Theorem 1.3:** integrate a compatible Lean proof of the Crittenden–Vanden Eynden covering theorem, or prove it independently. An independent formalization exists at [plby/lean-proofs, Erdős Problem 275](https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean), using Lean 4.33. That repository has no declared license; its source has not been copied.
+4. **Final correspondence audit:** verify the mathematical equivalence of every Lean statement to the original manuscript's hypotheses, constants, and quantifiers.
 
-- Theorem 1.1, which depends on weighted local-coloring Lemma 2.1.
-- The affine obstruction converse in Section 4.
-- The general upper direction of Theorem 1.3.
+## Source modules
 
-A separate public Lean formalization of the **Crittenden–Vanden Eynden covering theorem** exists at [Erdős Problem 275](https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean), in Lean 4.33. The upstream repository currently has no declared license; its code has **not** been copied or imported. Integrating its proof requires a compatible environment and appropriate licensing permission.
+- `Definitions`, `Padding`, `Charge`, `ChargeClasses`, `ChargeColoring`, `ColorPaths`
+- `AffineRelation`, `DifferenceCertificate`, `BezoutList`, `GcdOne`, `ArbitraryGcd`, `ResidueClass`, `ResidueNecessity`
+- `DyadicLower`, `SmallCases`, `SmallThresholds`, `TwoPower`, `CoveringBridge`
+- `PoweredWeights`, `SlowGrowth`, `WeightedDeletion`, `HeavyClass`, `ColorFiberMass`
+- `ColorDegrees`, `ColorDeletion`, `GraphLayers`, `GraphLayerDeletion`
+- `MassAccounting`, `DeletionSize`, `RealWeights`, `WeightGain`, `WeightMassInductionStep`
+- `MassInduction`, `FinalWeightBound`, `WeightedLemmaReduction`, `HeavyNeighbor`, `SeedMass`
+- `Audit` — `#print axioms` checks for unconditional theorems
 
 ## Build
 
-Install [elan](https://github.com/leanprover/elan), then:
+Install [elan](https://github.com/leanprover/elan). The project pins Lean 4.28.0 and Mathlib 4.28.0:
 
 ```sh
 lake update
@@ -39,58 +49,6 @@ lake exe cache get
 lake build
 ```
 
-Each push and pull request triggers GitHub Actions. The status of a **particular commit** is authoritative; success on an older commit does not certify subsequent edits.
+GitHub Actions runs on every push and pull request. [Last green source build before the expanded audit](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44583357689): **8,066 jobs**, successful. The expanded `Audit.lean` checks are being run on the next commit. **Never infer verification of a new commit from an older green build.**
 
-## Modules
-
-- `Definitions.lean` — exact list-based equations and coloring propositions.
-- `Padding.lean` — Lemma 3.1.
-- `Charge.lean` — elementary charge-count arithmetic.
-- `ResidueClass.lean` — nonzero residue-class obstruction.
-- `DyadicLower.lean` — unconditional proof of the optimality half of Theorem 1.3.
-- `SmallThresholds.lean` — exact two-color upper threshold.
-- `SmallCases.lean` — one-color upper threshold.
-- `Corollary.lean` — conditional deduction of Corollary 1.2.
-- `TwoPower.lean` — conditional reduction of the remaining half of Theorem 1.3.
-
-See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md) for the detailed dependency ledger.
-
-## New arithmetic development
-
-`AffineRelation.lean`, `DifferenceCertificate.lean`, `BezoutList.lean`, and `GcdOne.lean` form a verified chain from an integer Bézout certificate to a generalized Schur solution. In particular, if the gcd of a finite list of differences `a_i-b` is one, the finite set supports a solution. The **arbitrary-gcd case** is not yet proved; it is needed to finish the full affine residue characterization.
-
-`RMFormal/Schur/Audit.lean` prints Lean axioms associated with the unconditional results.
-
-**Latest verified axiom audit:** [GitHub Actions run 44524172688](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44524172688). Eight unconditional theorems reported only Lean's standard foundational axioms and no `sorryAx`.
-
-## Affine-residue classification completed
-
-`ResidueNecessity.lean` proves that every finite positive set avoiding all lengths of generalized Schur solutions lies in a nonzero residue class, including singletons and the empty class. The converse is proved in `ResidueClass.lean`. A direct iff theorem, `bounded_set_no_solutions_iff_residue`, **compiled successfully** in Lean 4.28.
-
-`CoveringBridge.lean` states the classical Crittenden–Vanden Eynden covering theorem explicitly and gives a **conditional** deduction of the upper half of Theorem 1.3 from this external theorem alone. The theorem's own proof has not been imported; its formal statement is not a proof of it.
-
-**Current complete source build:** [GitHub Actions run 44532837172](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44532837172), 8044 jobs passed. The built-in axiom audit covered 12 unconditional theorems; each reported only standard foundational axioms. The complete affine-residue classification is proved. Theorem 1.1 and the general unconditional upper direction of Theorem 1.3 are not.
-
-## Section 3: complete local charge-coloring argument
-
-The following three new modules are **compiled** in [GitHub Actions run 44541329817](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44541329817):
-
-- `ChargeClasses.lean`: two short representations with identical charge cannot be adjacent by an edge of the same color in a solution-free class.
-- `ChargeColoring.lean`: construct an explicit proper `Fin (2*m+1)`-coloring of any set whose vertices admit short signed representations.
-- `ColorPaths.lean`: every graph walk of length at most `m` yields the needed signed representation, so the radius-`m` ball is `(2*m+1)`-colorable.
-
-The color path is represented inductively and may repeat vertices. The local coloring uses the difference graph on natural numbers, which contains all graph walks in the complete graph on the finite interval. The central weighted local-coloring Lemma 2.1 and the full quantitative Theorem 1.1 are **not** yet proved.
-
-## First weighted-lemma arithmetic component
-
-`PoweredWeights.lean` formalizes the mth power of the vertex weight `W(d)=1/(χ^(d*m)*d!)` over `ℚ`, and proves the exact update identity `W(d-1)=χ^m*d*W(d)` for positive χ,d. Its proof compiled in [GitHub Actions run 44542819201](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44542819201). This is *not* a proof of the weighted local-coloring lemma; the graph-theoretic induction remains unformalized.
-
-**Latest full verification and audit:** [GitHub Actions run 44543476720](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720), 8048 jobs passed. Seventeen unconditional theorems audited with `#print axioms`; none reports `sorryAx`. The only reported axioms are `propext`, `Quot.sound`, and `Classical.choice`.
-
-## Weighted lemma: new formalization components
-
-The current branch now includes `SlowGrowth.lean` (slow-growth layer), `WeightedDeletion.lean` (mass-preserving deletion estimate), `HeavyClass.lean` and `ColorFiberMass.lean` (weighted pigeonhole/maximum color class), `ColorDegrees.lean` (monotonicity and strict loss of incident edge colors), and `ColorDeletion.lean` (removing color-c neighbors eliminates that color on the selected class). Those source modules have passed Lean builds.
-
-`GraphLayers.lean` and `GraphLayerDeletion.lean` connect arbitrary finite edge-colored graph balls to the deletion lemma; these have been Lean-verified and axiom-audited. Lemma 2.1 still lacks its full weighted induction. See `PROOF_OBLIGATIONS.md` for precise status.
-
-**Latest CI:** [run 44571608323](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44571608323) passed 8056 jobs and printed foundational-axiom dependencies for 26 unconditional theorems, with no `sorryAx`. The eight new weighted-lemma modules (`SlowGrowth`, `WeightedDeletion`, `HeavyClass`, `ColorFiberMass`, `ColorDegrees`, `ColorDeletion`, `GraphLayers`, `GraphLayerDeletion`) are individually verified. The actual weighted graph induction is still not done.
+A successful `lake build` verifies the Lean propositions and their proofs. It does not certify that the propositions exactly reproduce the natural-language manuscript; the statement audit remains essential.

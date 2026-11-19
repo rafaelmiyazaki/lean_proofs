@@ -8,6 +8,16 @@ import RMFormal.Schur.ColorFiberMass
 import RMFormal.Schur.GraphLayerDeletion
 import RMFormal.Schur.DyadicLower
 import RMFormal.Schur.SmallThresholds
+import RMFormal.Schur.MassAccounting
+import RMFormal.Schur.DeletionSize
+import RMFormal.Schur.RealWeights
+import RMFormal.Schur.WeightGain
+import RMFormal.Schur.WeightMassInductionStep
+import RMFormal.Schur.MassInduction
+import RMFormal.Schur.FinalWeightBound
+import RMFormal.Schur.WeightedLemmaReduction
+import RMFormal.Schur.HeavyNeighbor
+import RMFormal.Schur.SeedMass
 
 /-!
 Print proof dependencies for the main *unconditional* statements.
@@ -50,3 +60,24 @@ are not unproved statements of the research paper.
 #print axioms SchurFormal.selected_color_degree_strictly_drops
 #print axioms SchurFormal.single_color_neighbor_in_ball_or_layer
 #print axioms SchurFormal.color_radius_deletion_drops_degree
+
+-- Real-weight, mass-induction, heavy-neighbor and final bound subproofs
+#print axioms SchurFormal.old_mass_partition
+#print axioms SchurFormal.mass_after_deletion_lower_bound
+#print axioms SchurFormal.total_mass_preserved_by_layer_deletion
+#print axioms SchurFormal.kept_card_lt_of_unselected_vertex
+#print axioms SchurFormal.kept_card_lt_of_independent_class
+#print axioms SchurFormal.real_color_weight_pos
+#print axioms SchurFormal.real_color_weight_antitone
+#print axioms SchurFormal.real_color_weight_step
+#print axioms SchurFormal.real_color_weight_one_step_gain
+#print axioms SchurFormal.real_color_weight_strict_gain
+#print axioms SchurFormal.weighted_graph_deletion_preserves_mass
+#print axioms SchurFormal.mass_le_one_by_strict_vertex_deletion
+#print axioms SchurFormal.count_bound_of_uniform_weight
+#print axioms SchurFormal.count_bound_of_total_vertex_mass
+#print axioms SchurFormal.total_graph_weight_small
+#print axioms SchurFormal.weighted_local_bound_of_deletion_principle
+#print axioms SchurFormal.exists_large_finset_color
+#print axioms SchurFormal.exists_heavy_incident_color
+#print axioms SchurFormal.heavy_neighbor_seed_mass
