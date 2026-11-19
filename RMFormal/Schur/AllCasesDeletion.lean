@@ -47,7 +47,8 @@ theorem complete_graph_mass_preserving_deletion
     obtain ⟨col, hProperBall⟩ :=
       hLocal v c 1 (by omega) (by omega)
     have hBall : singleColorBall E c v 1 = Finset.univ :=
-      degree_one_color_ball_is_univ E v y hne hdOne c hColor
+      degree_one_color_ball_is_univ E v y
+        (Finset.mem_erase.mp hyErase).1 hdOne c hColor
     have hProperAll : ∀ x y : V,
         x ≠ y → E x y = c → col x ≠ col y := by
       intro x y hxy hcx
