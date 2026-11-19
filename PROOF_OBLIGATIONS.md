@@ -31,8 +31,8 @@ Source: Miyazaki, Mulrenin, Pohoată and Zheng, [arXiv:2605.15147v1](https://arx
 | Largest weighted color class (abstract and finite coloring) | `HeavyClass.lean`, `ColorFiberMass.lean` | Unconditional proofs compiled |
 | Monotonicity and strict drop of incident color-degree | `ColorDegrees.lean` | Unconditional proofs compiled |
 | Elimination of a selected edge color after deletion | `ColorDeletion.lean` | Unconditional proofs compiled |
-| Colored graph walks, radius balls, and next-layer closure | `GraphLayers.lean` | Proof draft, CI in progress |
-| Layer deletion directly from radius-ball geometry | `GraphLayerDeletion.lean` | Proof draft, CI in progress |
+| Colored graph walks, radius balls, and next-layer closure | `GraphLayers.lean` | **Unconditional Lean proof compiled and axiom-audited** |
+| Layer deletion directly from radius-ball geometry | `GraphLayerDeletion.lean` | **Unconditional Lean proof compiled and axiom-audited** |
 | Weighted local-coloring Lemma 2.1 | — | Graph-theoretic induction and total-weight estimate still unproved |
 | Affine obstruction converse | `ResidueNecessity.lean` | **Unconditional Lean proof compiled** |
 | Complete finite affine-obstruction equivalence | `ResidueNecessity.lean` | **Unconditional Lean theorem compiled and axiom-audited** |
@@ -77,4 +77,8 @@ The elementary identity for mth-powered weights was verified in [GitHub Actions 
 
 ## Weighted lemma subproofs, November 19
 
-The slow-growth lemma, mass-preservation inequality, weighted color-class pigeonhole principle and color-degree deletion facts now have green source builds. Two more modules link these facts to actual color-radius balls: `GraphLayers.lean` and `GraphLayerDeletion.lean`. Their status must be established by a passing CI run. None of these partial results establishes Lemma 2.1 until the full finite-graph induction, including weight comparison after induced-vertex deletion, has been compiled.
+The slow-growth lemma, mass-preservation inequality, weighted color-class pigeonhole principle and color-degree deletion facts now have green source builds. Two more modules link these facts to actual color-radius balls: `GraphLayers.lean` and `GraphLayerDeletion.lean`. Both modules compiled successfully and have been axiom-audited. None of these partial results establishes Lemma 2.1 until the full finite-graph induction, including weight comparison after induced-vertex deletion, has been compiled.
+
+## Latest verification — 26 unconditional theorems
+
+[GitHub Actions run 44571608323](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44571608323) passed **all 8056 jobs** and audited 26 named unconditional theorems. Only `propext`, `Quot.sound`, and `Classical.choice` were reported; `sorryAx` was absent. This verifies the graph-radius and color-loss steps as mathematical theorems but does **not** close the missing global weighted mass induction, Lemma 2.1, or Theorem 1.1.

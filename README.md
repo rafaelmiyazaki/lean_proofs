@@ -91,4 +91,6 @@ The color path is represented inductively and may repeat vertices. The local col
 
 The current branch now includes `SlowGrowth.lean` (slow-growth layer), `WeightedDeletion.lean` (mass-preserving deletion estimate), `HeavyClass.lean` and `ColorFiberMass.lean` (weighted pigeonhole/maximum color class), `ColorDegrees.lean` (monotonicity and strict loss of incident edge colors), and `ColorDeletion.lean` (removing color-c neighbors eliminates that color on the selected class). Those source modules have passed Lean builds.
 
-`GraphLayers.lean` and `GraphLayerDeletion.lean` connect arbitrary finite edge-colored graph balls to the deletion lemma; these are undergoing final verification. Lemma 2.1 still lacks its full weighted induction. See `PROOF_OBLIGATIONS.md` for precise status.
+`GraphLayers.lean` and `GraphLayerDeletion.lean` connect arbitrary finite edge-colored graph balls to the deletion lemma; these have been Lean-verified and axiom-audited. Lemma 2.1 still lacks its full weighted induction. See `PROOF_OBLIGATIONS.md` for precise status.
+
+**Latest CI:** [run 44571608323](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44571608323) passed 8056 jobs and printed foundational-axiom dependencies for 26 unconditional theorems, with no `sorryAx`. The seven new weighted-lemma modules (`SlowGrowth`, `WeightedDeletion`, `HeavyClass`, `ColorFiberMass`, `ColorDegrees`, `ColorDeletion`, `GraphLayers`, `GraphLayerDeletion`) are individually verified. The actual weighted graph induction is still not done.

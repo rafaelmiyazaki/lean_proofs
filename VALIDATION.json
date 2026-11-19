@@ -40,7 +40,9 @@
     "incident_color_degree_mono",
     "incident_color_degree_strict_drop",
     "selected_color_disappears",
-    "selected_color_degree_strictly_drops"
+    "selected_color_degree_strictly_drops",
+    "single_color_neighbor_in_ball_or_layer",
+    "color_radius_deletion_drops_degree"
   ],
   "conditional_results_verified": [
     "corollary_1_2_of_main_bound",
@@ -53,17 +55,17 @@
   "external_covering_theorem_proof_known": "https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean",
   "external_covering_proof_imported": false,
   "main_theorems_verified": false,
-  "new_commit_compilation_pending": true,
+  "new_commit_compilation_pending": false,
   "remaining": [
-    "arbitrary-gcd affine obstruction",
-    "Crittenden–Vanden Eynden covering theorem integration",
-    "weighted local-coloring lemma",
-    "Theorem 1.1"
+    "formalize full real-valued vertex weights, mass comparison and induction for weighted local-coloring Lemma 2.1",
+    "integrate verified Crittenden–Vanden Eynden covering theorem (external)",
+    "deduce the quantitative Theorem 1.1 and unconditional Corollary 1.2",
+    "complete exact manuscript statement audit and final end-to-end axiom audit"
   ],
   "ci_compilation_passed_on_current_commit": true,
-  "ci_verified_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720",
+  "ci_verified_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44571608323",
   "axiom_audit": {
-    "checked": 17,
+    "checked": 26,
     "sorryAx_reported": false,
     "observed_axioms": [
       "propext",
@@ -74,7 +76,7 @@
   "full_affine_obstruction_principle_verified": true,
   "full_affine_obstruction_iff_verified_on_new_commit": true,
   "outstanding_external_covering_proof": true,
-  "latest_verified_source_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720",
+  "latest_verified_source_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44571608323",
   "weighted_local_coloring_lemma_verified": false,
   "charge_local_ball_coloring_verified": true,
   "weighted_vertex_powered_factorial_identity_verified": true,
@@ -83,5 +85,6 @@
     "full finite colored graph induction",
     "mass comparison under vertex deletion",
     "deduction of main quantitative bound"
-  ]
+  ],
+  "graph_layer_deletion_verified": true
 }
