@@ -73,3 +73,5 @@ import RMFormal.Schur.SeedMass
 import RMFormal.Schur.MinColorDegree
 
 import RMFormal.Schur.ProperDeletion
+
+import RMFormal.Schur.MinHeavySeed
