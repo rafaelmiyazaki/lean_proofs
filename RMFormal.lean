@@ -117,3 +117,5 @@ import RMFormal.Schur.SchurPowerConversion
 import RMFormal.Schur.MainTheorem11
 
 import RMFormal.Schur.Corollary12
+
+import RMFormal.Schur.SparseExponential
