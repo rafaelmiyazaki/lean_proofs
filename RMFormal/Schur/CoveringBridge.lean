@@ -31,7 +31,9 @@ theorem residue_covering_of_cve
   have hIco : ∀ x ∈ Set.Ico (1 : ℤ) (1 + (2 : ℤ) ^ k),
       ∃ i : Fin k, x ≡ (a i : ℤ) [ZMOD d i] := by
     intro x hx
-    have hnonneg : 0 ≤ x := by omega
+    have hnonneg : 0 ≤ x := by
+      have hlowZ : (1 : ℤ) ≤ x := hx.1
+      omega
     have hxcast : (x.toNat : ℤ) = x := Int.toNat_of_nonneg hnonneg
     have hpow : (((2 ^ k : ℕ) : ℤ)) = (2 : ℤ) ^ k := by norm_cast
     have hlow : 1 ≤ x.toNat := by
@@ -42,6 +44,7 @@ theorem residue_covering_of_cve
     have hupp : x.toNat ≤ 2 ^ k := by
       have hcast : (x.toNat : ℤ) ≤ ((2 ^ k : ℕ) : ℤ) := by
         rw [hxcast, hpow]
+        have huppZ : x < 1 + (2 : ℤ) ^ k := hx.2
         omega
       exact_mod_cast hcast
     obtain ⟨i, hi⟩ := hcover x.toNat hlow hupp
