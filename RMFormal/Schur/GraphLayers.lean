@@ -41,13 +41,14 @@ theorem within_single_color_radius_extend {V C : Type*}
 /-- The finite vertex set reached in at most i steps in color c. -/
 noncomputable def singleColorBall
     {V C : Type*} [Fintype V]
-    (E : V → V → C) (c : C) (a : V) (i : ℕ) : Finset V :=
-  Finset.univ.filter (WithinSingleColorRadius E c a i)
+    (E : V → V → C) (c : C) (a : V) (i : ℕ) : Finset V := by
+  classical
+  exact Finset.univ.filter (WithinSingleColorRadius E c a i)
 
 /-- Every color-c neighbor of a vertex within distance i
 lies in the radius-i ball or the next layer. -/
 theorem single_color_neighbor_in_ball_or_layer
-    {V C : Type*} [Fintype V]
+    {V C : Type*} [Fintype V] [DecidableEq V]
     (E : V → V → C) (c : C) (a x y : V) (i : ℕ)
     (hx : x ∈ singleColorBall E c a i)
     (hxy : E x y = c) :
@@ -55,9 +56,11 @@ theorem single_color_neighbor_in_ball_or_layer
       (singleColorBall E c a (i + 1) \
         singleColorBall E c a i) := by
   classical
-  have hr : WithinSingleColorRadius E c a i x :=
-    (Finset.mem_filter.mp hx).2
+  have hr : WithinSingleColorRadius E c a i x := by
+    unfold singleColorBall at hx
+    exact (Finset.mem_filter.mp hx).2
   have hyNext : y ∈ singleColorBall E c a (i + 1) := by
+    unfold singleColorBall
     apply Finset.mem_filter.mpr
     exact ⟨Finset.mem_univ _, within_single_color_radius_extend
       E c a x y i hr hxy⟩
