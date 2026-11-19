@@ -37,7 +37,6 @@ theorem real_color_weight_step
     Real.rpow_pos_of_pos hfact _
   simp only [realColorWeight, pow_succ, hrpowFact]
   field_simp
-  ring
 
 /-- A single lost color increases weight by at least the factor
 chi*d_min^(1/ell), provided the previous degree was ≥ d_min. -/
