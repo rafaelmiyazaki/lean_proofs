@@ -43,7 +43,7 @@
   "external_covering_theorem_proof_known": "https://github.com/plby/lean-proofs/blob/main/src/latest/ErdosProblems/Erdos275.lean",
   "external_covering_proof_imported": false,
   "main_theorems_verified": false,
-  "new_commit_compilation_pending": true,
+  "new_commit_compilation_pending": false,
   "remaining": [
     "arbitrary-gcd affine obstruction",
     "Crittenden–Vanden Eynden covering theorem integration",
@@ -51,9 +51,9 @@
     "Theorem 1.1"
   ],
   "ci_compilation_passed_on_current_commit": true,
-  "ci_verified_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44532837172",
+  "ci_verified_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720",
   "axiom_audit": {
-    "checked": 12,
+    "checked": 17,
     "sorryAx_reported": false,
     "observed_axioms": [
       "propext",
@@ -64,7 +64,7 @@
   "full_affine_obstruction_principle_verified": true,
   "full_affine_obstruction_iff_verified_on_new_commit": true,
   "outstanding_external_covering_proof": true,
-  "latest_verified_source_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44542819201",
+  "latest_verified_source_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720",
   "weighted_local_coloring_lemma_verified": false,
   "charge_local_ball_coloring_verified": true,
   "weighted_vertex_powered_factorial_identity_verified": true

@@ -84,3 +84,5 @@ The color path is represented inductively and may repeat vertices. The local col
 ## First weighted-lemma arithmetic component
 
 `PoweredWeights.lean` formalizes the mth power of the vertex weight `W(d)=1/(χ^(d*m)*d!)` over `ℚ`, and proves the exact update identity `W(d-1)=χ^m*d*W(d)` for positive χ,d. Its proof compiled in [GitHub Actions run 44542819201](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44542819201). This is *not* a proof of the weighted local-coloring lemma; the graph-theoretic induction remains unformalized.
+
+**Latest full verification and audit:** [GitHub Actions run 44543476720](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720), 8048 jobs passed. Seventeen unconditional theorems audited with `#print axioms`; none reports `sorryAx`. The only reported axioms are `propext`, `Quot.sound`, and `Classical.choice`.

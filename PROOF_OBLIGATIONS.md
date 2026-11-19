@@ -63,3 +63,7 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 ## Weight-step arithmetic
 
 The elementary identity for mth-powered weights was verified in [GitHub Actions run 44542819201](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44542819201). The unpowered vertex mass sum and the central inductive deletion argument are still missing; the powered identity alone is insufficient to establish Lemma 2.1.
+
+## Latest verified audit, November 19, 2026
+
+[GitHub Actions run 44543476720](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44543476720) passed all 8048 jobs. All **17** unconditional theorems audited in `Audit.lean` reported only standard Lean foundational axioms, with no `sorryAx`. This is not a claim that the two main research theorems are complete: Theorem 1.1 and the general upper half of Theorem 1.3 remain mathematically unproved in this repository.
