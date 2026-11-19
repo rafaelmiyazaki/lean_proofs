@@ -77,3 +77,5 @@ import RMFormal.Schur.ProperDeletion
 import RMFormal.Schur.MinHeavySeed
 
 import RMFormal.Schur.DegreeOneStar
+
+import RMFormal.Schur.HeavyIndependentClass
