@@ -19,6 +19,7 @@ theorem exists_color_with_large_weight
     (chi : ℕ) (hchi : 0 < chi) (M : Fin chi → ℝ) :
     ∃ i : Fin chi, (∑ j : Fin chi, M j) ≤ (chi : ℝ) * M i := by
   classical
+  haveI : Nonempty (Fin chi) := ⟨⟨0, hchi⟩⟩
   by_contra hnone
   have hlt (i : Fin chi) :
       (chi : ℝ) * M i < ∑ j : Fin chi, M j := by
