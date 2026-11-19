@@ -21,7 +21,7 @@ theorem incident_color_of_walk
     (E : V → V → C) (c : C) (a : V)
     (hSym : ∀ x y : V, E x y = E y x)
     (hBase : c ∈ incidentColors E Finset.univ a)
-    {x n : _} (hp : SingleColorWalk E c a x n) :
+    {x : V} {n : ℕ} (hp : SingleColorWalk E c a x n) :
     c ∈ incidentColors E Finset.univ x := by
   induction hp with
   | nil => exact hBase
@@ -32,7 +32,7 @@ theorem incident_color_of_walk
       exact ih
     · apply Finset.mem_image.mpr
       refine ⟨b, Finset.mem_erase.mpr ⟨?_, Finset.mem_univ _⟩, ?_⟩
-      · exact hEq.symm
+      · exact fun h => hEq h.symm
       · rw [hSym dest b]
         exact hedge
 
