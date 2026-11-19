@@ -37,7 +37,8 @@ theorem heavy_seed_to_growth
   rw [color_degree_root_pow d ell (by omega) hell]
   have hdPos : (0 : ℝ) < d := by
     exact_mod_cast (show 0 < d by omega)
-  exact le_of_lt ((div_lt_iff₀ hdPos).mp hSeed)
+  exact le_of_lt (by simpa [mul_comm] using
+    ((div_lt_iff₀ hdPos).mp hSeed))
 
 /-- Root-factor slow-growth for an actual finite colored graph
 provided its radius-one ball has more than W/d mass. -/
