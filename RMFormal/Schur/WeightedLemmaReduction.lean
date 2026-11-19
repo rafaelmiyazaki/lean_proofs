@@ -37,11 +37,15 @@ theorem total_graph_weight_small
   have hDegreeZero (x : V) (hx : x ∈ S) :
       incidentColorDegree E S x = 0 := by
     have hErase : S.erase x = ∅ := by
-      apply Finset.eq_empty_iff_forall_not_mem.mpr
-      intro y hy
-      have hyne := (Finset.mem_erase.mp hy).1
-      have hyS := (Finset.mem_erase.mp hy).2
-      exact hyne (hUnique hyS hx)
+      apply Finset.ext
+      intro y
+      constructor
+      · intro hy
+        have hyne := (Finset.mem_erase.mp hy).1
+        have hyS := (Finset.mem_erase.mp hy).2
+        exact False.elim (hyne (hUnique hyS hx))
+      · intro hy
+        simp at hy
     simp [incidentColorDegree, incidentColors, hErase]
   have hWeightOne : ∀ x ∈ S, graphVertexWeight E chi ell S x = 1 := by
     intro x hx
