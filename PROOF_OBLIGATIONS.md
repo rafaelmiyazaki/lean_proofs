@@ -9,6 +9,10 @@ Source: Miyazaki, Mulrenin, Pohoată and Zheng, [arXiv:2605.15147v1](https://arx
 | List-based equations and color classes | `Definitions.lean` | Elaborated definitions |
 | Lemma 3.1 (padding) | `Padding.lean` | Unconditional proof compiled |
 | Section 3 charge arithmetic | `Charge.lean` | Unconditional proofs compiled |
+| Charge-class independence | `ChargeClasses.lean` | **Unconditional Lean proof compiled** |
+| Coloring signed-reachable vertices using at most 2m+1 charge classes | `ChargeColoring.lean` | **Unconditional Lean proof compiled** |
+| Color-graph walks produce signed representations | `ColorPaths.lean` | **Unconditional Lean proof compiled** |
+| Color-radius-m balls admit proper 2m+1 colorings | `ColorPaths.lean` | **Unconditional Lean proof compiled** |
 | Section 4 sufficient residue obstruction | `ResidueClass.lean` | Unconditional proof compiled |
 | Corollary 1.2 | `Corollary.lean` | Compiled **conditional** deduction assuming Theorem 1.1 |
 | Theorem 1.3 lower, all r | `DyadicLower.lean` | **Unconditional proof compiled** |
@@ -36,7 +40,7 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 1. **Completed:** the arbitrary-gcd affine-obstruction converse, including the zero-gcd/singleton case. A combined equivalence has been **compiled and axiom-audited**.
 2. Verify the bridge from the precise Crittenden–Vanden Eynden covering statement to `ResidueCoveringPrinciple`; its proof is currently conditional on the external theorem.
 3. Complete the general upper direction of Theorem 1.3.
-4. Formalize the colored-graph weighted lemma (Lemma 2.1).
+4. Formalize the colored-graph weighted lemma (Lemma 2.1). The charge-class independence, proper coloring, and walk-to-representation local-ball argument are now compiled.
 5. Prove the main quantitative bound (Theorem 1.1), then discharge the assumption in Corollary 1.2.
 
 ## Trust policy
@@ -50,3 +54,7 @@ The covering theorem is **already formalized elsewhere** in [plby/lean-proofs / 
 ## Latest verification
 
 [GitHub Actions run 44532837172](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44532837172) passed all 8044 build jobs. Twelve unconditional theorem axiom audits showed only `propext`, `Classical.choice`, and `Quot.sound` (some with fewer); none showed `sorryAx`. The external covering theorem is still supplied only as an **explicit hypothesis** to `two_power_upper_of_cve`.
+
+## Section 3 development
+
+[GitHub Actions run 44541329817](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44541329817) compiled the `ChargeClasses.lean`, `ChargeColoring.lean`, and `ColorPaths.lean` modules. The new `#print axioms` entries are included in the next build; their audit results should be checked there.

@@ -1,5 +1,6 @@
 import RMFormal.Schur.GcdOne
 import RMFormal.Schur.ResidueNecessity
+import RMFormal.Schur.ColorPaths
 import RMFormal.Schur.DyadicLower
 import RMFormal.Schur.SmallThresholds
 
@@ -24,3 +25,9 @@ are not unproved statements of the research paper.
 #print axioms SchurFormal.gcd_differences_dvd_base_forces_solution
 #print axioms SchurFormal.residue_obstruction_principle
 #print axioms SchurFormal.bounded_set_no_solutions_iff_residue
+
+-- Section 3: signed walks, charge-class independence, and local proper coloring
+#print axioms SchurFormal.same_charge_edge_creates_solution
+#print axioms SchurFormal.reachable_has_charge_coloring
+#print axioms SchurFormal.differencePath_has_short_rep
+#print axioms SchurFormal.radius_ball_charge_coloring

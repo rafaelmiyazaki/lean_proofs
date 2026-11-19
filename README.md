@@ -70,3 +70,13 @@ See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md) for the detailed dependency led
 `CoveringBridge.lean` states the classical Crittenden–Vanden Eynden covering theorem explicitly and gives a **conditional** deduction of the upper half of Theorem 1.3 from this external theorem alone. The theorem's own proof has not been imported; its formal statement is not a proof of it.
 
 **Current complete source build:** [GitHub Actions run 44532837172](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44532837172), 8044 jobs passed. The built-in axiom audit covered 12 unconditional theorems; each reported only standard foundational axioms. The complete affine-residue classification is proved. Theorem 1.1 and the general unconditional upper direction of Theorem 1.3 are not.
+
+## Section 3: complete local charge-coloring argument
+
+The following three new modules are **compiled** in [GitHub Actions run 44541329817](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44541329817):
+
+- `ChargeClasses.lean`: two short representations with identical charge cannot be adjacent by an edge of the same color in a solution-free class.
+- `ChargeColoring.lean`: construct an explicit proper `Fin (2*m+1)`-coloring of any set whose vertices admit short signed representations.
+- `ColorPaths.lean`: every graph walk of length at most `m` yields the needed signed representation, so the radius-`m` ball is `(2*m+1)`-colorable.
+
+The color path is represented inductively and may repeat vertices. The local coloring uses the difference graph on natural numbers, which contains all graph walks in the complete graph on the finite interval. The central weighted local-coloring Lemma 2.1 and the full quantitative Theorem 1.1 are **not** yet proved.
