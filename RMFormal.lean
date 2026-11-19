@@ -89,3 +89,5 @@ import RMFormal.Schur.ColorBallIncident
 import RMFormal.Schur.HeavyStarBall
 
 import RMFormal.Schur.RootSlowGrowth
+
+import RMFormal.Schur.HeavySeedBall
