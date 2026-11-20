@@ -47,3 +47,19 @@ lake build
 See [STATEMENT_FIDELITY.md](STATEMENT_FIDELITY.md) for a claim-by-claim manuscript comparison. The Section 5 quantitative refinements and the odd-cycle estimate in Remark 2.2 are not separately formalized. See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md) for the theorem-level ledger and [VALIDATION.json](VALIDATION.json) for machine-readable status.
 
 **Draft pull request:** [#1](https://github.com/rafaelmiyazaki/lean_proofs/pull/1).
+
+## Section 5 development (20 November 2026)
+
+The strengthened bound `1 ≤ m ≤ 2^r - 1` is **not yet verified**. The following independent intermediate statements have passing Lean builds and clean `#print axioms` audits in [run 44826326345](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44826326345):
+
+- `exists_minimal_schur_length` and `nonresidue_has_minimal_schur_length`: extract the least positive equation length.
+- `ordered_opposite_differences_le`: the ordered-pairing estimate `a+b ≤ M`.
+- `consecutive_pair_exact_minimum`: verify the sharp example `{M-1,M}`.
+- `exists_lambert_greedy_step`, `exists_lambert_bounded_order` and `LambertBoundedWalk.prefix_bounds`: construct a greedy ordering with running sums in `(-b,a]`.
+- `lambert_length_of_distinct_prefixes`: a pigeonhole bound `k ≤ a+b`, **conditional on prefix distinctness**.
+- `bounded_two_power_upper_of_bounded_obstruction`: the multicolor refinement, **conditional on the explicit unproved** `BoundedResidueObstruction`.
+
+The indexed primitive-zero-sum definition and nonvanishing lemma compile in [run 44826625519](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44826625519). Additional prefix-collision and primitive-sublist bridge modules are under CI, not yet recorded as verified.
+
+**Unresolved mathematical bridge:** show that a minimum-length Schur relation yields a primitive balanced pairing; show that every nonempty proper zero-sum subcollection is excluded after any greedy ordering. Apply the already-verified length estimate and diameter bound to prove the bounded-obstruction principle unconditionally.
+
