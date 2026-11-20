@@ -135,3 +135,4 @@ import RMFormal.Schur.LambertPrefix
 import RMFormal.Schur.LambertLength
 import RMFormal.Schur.Section5Audit
 import RMFormal.Schur.MinimalZeroSum
+import RMFormal.Schur.ZeroBlock
