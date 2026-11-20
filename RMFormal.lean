@@ -123,3 +123,4 @@ import RMFormal.Schur.SparseExponential
 import RMFormal.Schur.ExponentialRecurrence
 
 import RMFormal.Schur.ProductExponential
+import RMFormal.Schur.ResidueRootProduct
