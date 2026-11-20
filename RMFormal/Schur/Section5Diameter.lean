@@ -31,7 +31,8 @@ theorem exists_minimal_schur_length
   refine ⟨Nat.find hex, (Nat.find_spec hex).1,
     (Nat.find_spec hex).2, ?_⟩
   intro t ht hlt hsol
-  exact Nat.find_min' hex hlt ⟨ht, hsol⟩
+  have hmin : Nat.find hex ≤ t := Nat.find_min' ⟨ht, hsol⟩
+  omega
 
 /-- The diameter of differences of two increasing integer sequences
 in [0,M] does not exceed M. No assumption on the sum is needed. -/
