@@ -130,3 +130,4 @@ import RMFormal.Schur.Section5Diameter
 import RMFormal.Schur.LambertGreedyStep
 import RMFormal.Schur.Section5Sharpness
 import RMFormal.Schur.Section5Bridge
+import RMFormal.Schur.LambertWalk
