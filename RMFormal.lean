@@ -121,3 +121,5 @@ import RMFormal.Schur.Corollary12
 import RMFormal.Schur.SparseExponential
 
 import RMFormal.Schur.ExponentialRecurrence
+
+import RMFormal.Schur.ProductExponential
