@@ -69,4 +69,26 @@ theorem ordered_opposite_differences_le
     p q hP hQ hpM hqM i j
   omega
 
+/-- The existing affine-residue characterization guarantees that
+every finite positive set with no nonzero residue obstruction has a
+Schur solution of *minimum* positive length. This is the exact
+starting point of the Section 5 quantitative argument. -/
+theorem nonresidue_has_minimal_schur_length
+    (A : Set ℕ) (M : ℕ)
+    (hA : ∀ x ∈ A, x ∈ PositiveInterval M)
+    (hnot : ¬ ∃ d a : ℕ, 2 ≤ d ∧ 0 < a ∧ a < d ∧
+      ∀ x ∈ A, x % d = a) :
+    ∃ m : ℕ, 0 < m ∧ HasEquation A (m + 1) m ∧
+      ∀ t : ℕ, 0 < t → t < m →
+        ¬ HasEquation A (t + 1) t := by
+  classical
+  apply exists_minimal_schur_length A
+  by_contra hnone
+  apply hnot
+  apply (bounded_set_no_solutions_iff_residue A M hA).mp
+  intro m hm hsol
+  exact hnone ⟨m, hm, hsol⟩
+
+#print axioms nonresidue_has_minimal_schur_length
+
 end SchurFormal
