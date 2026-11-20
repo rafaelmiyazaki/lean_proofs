@@ -125,3 +125,4 @@ import RMFormal.Schur.ExponentialRecurrence
 import RMFormal.Schur.ProductExponential
 import RMFormal.Schur.ResidueRootProduct
 import RMFormal.Schur.Theorem13
+import RMFormal.Schur.Corollary12Source
