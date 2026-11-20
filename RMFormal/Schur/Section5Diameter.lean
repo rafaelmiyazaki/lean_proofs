@@ -25,6 +25,7 @@ theorem exists_minimal_schur_length
     ∃ m : ℕ, 0 < m ∧ HasEquation A (m + 1) m ∧
       ∀ t : ℕ, 0 < t → t < m →
         ¬ HasEquation A (t + 1) t := by
+  classical
   let P : ℕ → Prop := fun m => 0 < m ∧ HasEquation A (m + 1) m
   have hex : ∃ m, P m := hexists
   refine ⟨Nat.find hex, (Nat.find_spec hex).1,
