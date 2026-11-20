@@ -20,7 +20,7 @@ version of the Crittenden--Vanden Eynden theorem.
 
 namespace SchurFormal
 
-private def coveringRoot (d : ℕ) : ℂ :=
+private noncomputable def coveringRoot (d : ℕ) : ℂ :=
   Complex.exp (2 * Real.pi * Complex.I / (d : ℂ))
 
 private theorem coveringRoot_primitive (d : ℕ) (hd : d ≠ 0) :
