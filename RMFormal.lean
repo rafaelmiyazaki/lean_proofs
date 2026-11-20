@@ -128,3 +128,4 @@ import RMFormal.Schur.Theorem13
 import RMFormal.Schur.Corollary12Source
 import RMFormal.Schur.Section5Diameter
 import RMFormal.Schur.LambertGreedyStep
+import RMFormal.Schur.Section5Sharpness
