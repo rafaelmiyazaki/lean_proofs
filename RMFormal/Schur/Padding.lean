@@ -2,7 +2,7 @@ import RMFormal.Schur.Definitions
 
 /-!
 # Lemma 3.1: repetition and padding
-Draft scripts only: this code was not compiled when authored.
+This source has a successful Lean build and axiom audit.
 -/
 
 namespace SchurFormal

@@ -11,7 +11,8 @@ Lean 4 / Mathlib formalizations, beginning with Miyazaki, Mulrenin, Pohoată and
 |---|---|---|
 | Lemma 2.1 (weighted local coloring) | `SchurFormal.weighted_local_coloring_lemma` | Successful build and clean axiom audit |
 | Theorem 1.1 (quantitative bound) | `SchurFormal.main_bound_powered : MainBoundPowered` | Successful build and clean axiom audit |
-| Corollary 1.2 | `SchurFormal.corollary_1_2_unconditional` | Successful build and clean axiom audit |
+| Corollary 1.2 (quotient parameters) | `SchurFormal.corollary_1_2_unconditional` | Successful build and clean axiom audit |
+| Corollary 1.2 (original a,b hypotheses) | `SchurFormal.corollary_1_2_source_parameters` | Successful build and clean axiom audit |
 | Theorem 1.3, lower/optimality | `SchurFormal.two_power_lower : TwoPowerLower` | Successful build and clean axiom audit |
 | Theorem 1.3, general upper | `SchurFormal.two_power_upper_unconditional : TwoPowerUpper` | Successful build and clean axiom audit |
 | Theorem 1.3, both directions | `SchurFormal.theorem_1_3_unconditional` | Successful build and clean axiom audit |
@@ -43,6 +44,6 @@ lake exe cache get
 lake build
 ```
 
-See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md) for the theorem-level ledger and [VALIDATION.json](VALIDATION.json) for machine-readable status.
+See [STATEMENT_FIDELITY.md](STATEMENT_FIDELITY.md) for a claim-by-claim manuscript comparison. The Section 5 quantitative refinements and the odd-cycle estimate in Remark 2.2 are not separately formalized. See [PROOF_OBLIGATIONS.md](PROOF_OBLIGATIONS.md) for the theorem-level ledger and [VALIDATION.json](VALIDATION.json) for machine-readable status.
 
 **Draft pull request:** [#1](https://github.com/rafaelmiyazaki/lean_proofs/pull/1).

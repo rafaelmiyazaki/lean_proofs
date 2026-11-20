@@ -45,13 +45,13 @@ def MainBoundPowered : Prop :=
         ¬ HasEquation (ColorClass N color i) (m + 1) m) →
       N ^ m ≤ (2 * m + 1) ^ (r * m) * Nat.factorial r
 
-/-- Upper half of Theorem 1.3; not proved unconditionally. -/
+/-- Upper half of Theorem 1.3; proved in ResidueRootProduct.lean. -/
 def TwoPowerUpper : Prop :=
   ∀ r : ℕ, 0 < r → ∀ color : ℕ → Fin r,
     ∃ m : ℕ, 0 < m ∧
       MonochromaticSolution r (2 ^ r) (m + 1) m color
 
-/-- Optimality half of Theorem 1.3; not yet proved. -/
+/-- Optimality half of Theorem 1.3; proved in DyadicLower.lean. -/
 def TwoPowerLower : Prop :=
   ∀ r : ℕ, 0 < r → ∃ color : ℕ → Fin r,
     ∀ m : ℕ, 0 < m →

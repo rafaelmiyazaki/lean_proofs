@@ -28,8 +28,12 @@
   "main_theorems_verified": true,
   "manuscript_statement_fidelity_review_complete": false,
   "remaining": [
-    "final statement-fidelity audit against arXiv:2605.15147v1",
-    "review auxiliary manuscript claims beyond the principal named results",
-    "consider marking draft PR ready after independent review"
-  ]
+    "Independent final review of source-to-Lean statement correspondence",
+    "Formalize Section 5's m ≤ 2^r-1 quantitative refinement if complete manuscript coverage is desired",
+    "Formalize Section 5's large-interval small-m estimate if complete manuscript coverage is desired",
+    "Formalize the derived odd-cycle estimate in Remark 2.2 if complete manuscript coverage is desired"
+  ],
+  "source_parameter_corollary_1_2_verified": true,
+  "source_parameter_corollary_1_2_audit_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44748112697",
+  "manuscript_main_statement_comparison_preliminary": true
 }
