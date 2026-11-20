@@ -69,6 +69,7 @@ theorem exists_lambert_bounded_order
             hBal hNZ hBounds htLow htHigh
         have hCardErase : (s.erase i).card < n := by
           have hcard := Finset.card_erase_of_mem hi
+          have hposCard : 0 < s.card := Finset.card_pos.mpr ⟨i, hi⟩
           omega
         have hEraseBalance :
             (t + f i) + (∑ j ∈ s.erase i, f j) = 0 := by
