@@ -27,23 +27,29 @@ theorem lambert_length_of_no_proper_zero_sublist
       ys ≠ [] → ys.length < (order.map f).length →
       ys.sum ≠ 0) :
     order.length ≤ a + b := by
-  have hlistInject :
-      Function.Injective
-        (fun i : Fin order.length =>
-          ((order.map f).take (i : ℕ)).sum) := by
-    simpa only [List.length_map] using
-      (proper_prefix_sums_injective (order.map f) hprimitive)
+  have hlistInject :=
+    proper_prefix_sums_injective (order.map f) hprimitive
   have hpartialInject :
       Function.Injective
         (fun i : Fin order.length =>
           t + ((order.take (i : ℕ)).map f).sum) := by
     intro i j heq
-    apply hlistInject
     have hcancel :
         ((order.take (i : ℕ)).map f).sum =
-          ((order.take (j : ℕ)).map f).sum := by
-      omega
-    simpa only [List.take_map] using hcancel
+          ((order.take (j : ℕ)).map f).sum :=
+      add_left_cancel heq
+    have hi : i.val < (order.map f).length := by
+      simpa only [List.length_map] using i.isLt
+    have hj : j.val < (order.map f).length := by
+      simpa only [List.length_map] using j.isLt
+    have hmap :
+        ((order.map f).take i.val).sum =
+          ((order.map f).take j.val).sum := by
+      simpa only [List.map_take] using hcancel
+    have heqFin : (⟨i.val, hi⟩ : Fin (order.map f).length) =
+        (⟨j.val, hj⟩ : Fin (order.map f).length) :=
+      hlistInject hmap
+    exact Fin.ext (congrArg Fin.val heqFin)
   exact lambert_length_of_distinct_prefixes
     f a b t order hwalk hpartialInject
 
