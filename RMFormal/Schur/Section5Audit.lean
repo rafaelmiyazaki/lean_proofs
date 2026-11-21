@@ -6,6 +6,7 @@ import RMFormal.Schur.LambertPrefix
 import RMFormal.Schur.LambertLength
 import RMFormal.Schur.Section5Bridge
 import RMFormal.Schur.MinimalZeroSum
+import RMFormal.Schur.Section5Numerics
 
 /-!
 # Section 5: audit the exact proof-dependency boundary
@@ -28,3 +29,12 @@ as an explicit assumption.
 #print axioms SchurFormal.bounded_two_power_upper_of_bounded_obstruction
 
 #print axioms SchurFormal.primitive_zero_sum_term_ne_zero
+
+#print axioms SchurFormal.weighted_zero_sublist_of_prefix_collision
+#print axioms SchurFormal.weighted_proper_prefix_sums_injective
+#print axioms SchurFormal.lambert_length_of_no_proper_zero_sublist
+#print axioms SchurFormal.lambert_length_of_primitive_finset
+#print axioms SchurFormal.lambert_minimal_zero_sum_length
+#print axioms SchurFormal.primitive_balanced_pair_to_zero_sum
+#print axioms SchurFormal.primitive_balanced_pair_length_bound
+#print axioms SchurFormal.section_5_numerical_conclusion
