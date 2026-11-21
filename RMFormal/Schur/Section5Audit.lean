@@ -7,6 +7,7 @@ import RMFormal.Schur.LambertLength
 import RMFormal.Schur.Section5Bridge
 import RMFormal.Schur.MinimalZeroSum
 import RMFormal.Schur.Section5Numerics
+import RMFormal.Schur.LambertPrimitive
 
 /-!
 # Section 5: audit the exact proof-dependency boundary
