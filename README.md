@@ -63,3 +63,21 @@ The indexed primitive-zero-sum definition and nonvanishing lemma compile in [run
 
 **Unresolved mathematical bridge:** show that a minimum-length Schur relation yields a primitive balanced pairing; show that every nonempty proper zero-sum subcollection is excluded after any greedy ordering. Apply the already-verified length estimate and diameter bound to prove the bounded-obstruction principle unconditionally.
 
+
+
+## November 21: the indexed Lambert theorem has been formalized
+
+The following additional statements now have **successful source builds**:
+
+| Step | Lean declaration | Supporting CI |
+|---|---|---|
+| Weighted prefix collision, preserving repeated numerical values | `weighted_zero_sublist_of_prefix_collision` | [44905537248](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44905537248) |
+| Lambert inequality for primitive indexed finite zero-sum collections | `lambert_length_of_primitive_finset` | [44905537248](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44905537248) |
+| Classical `Fin k` version, `k≤a+b` | `lambert_minimal_zero_sum_length` | [44905606129](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44905606129) |
+| Primitive balanced pair implies primitive zero-sum differences | `primitive_balanced_pair_to_zero_sum` | [44905606129](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44905606129) |
+| Lambert bound for primitive balanced pairs | `primitive_balanced_pair_length_bound` | [44905606129](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44905606129) |
+| Sorted-pair diameter plus Lambert implies `m≤M-1` | `section_5_numerical_conclusion` | [44905838508](https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44905838508) |
+
+**Important remaining mathematical gap:** starting from a minimum-length `(m+1,m)` Schur solution in a positive finite set `A⊆[M]`, construct the indexed balanced pair `P,Q` after adjoining one zero to `Q`, prove that no nonempty proper balanced subidentity exists (using minimality), sort both sides with proof of preserved sums and multiplicities, and derive the signed-difference magnitude hypotheses and attained extrema. Only then can the existing numerical conclusion discharge `BoundedResidueObstruction` and make `BoundedTwoPowerUpper` unconditional.
+
+The entire Section 5 refinement is **still not verified**, and the draft PR remains open. The expanded `Section5Audit.lean` has displayed only standard Lean axioms for the new core declarations; a missing import in that audit module was corrected in commit `81934a0`, with the corrected full build pending.

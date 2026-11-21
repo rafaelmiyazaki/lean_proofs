@@ -1,7 +1,7 @@
 {
   "paper": "Improved Ramsey Bounds for Generalized Schur Equations",
   "source": "arXiv:2605.15147v1",
-  "date": "2026-11-20",
+  "date": "2026-11-21",
   "lean": "4.28.0",
   "mathlib": "v4.28.0",
   "verification_status": "MAIN_CLAIMS_KERNEL_VERIFIED_STATEMENT_FIDELITY_PENDING",
@@ -28,13 +28,13 @@
   "main_theorems_verified": true,
   "manuscript_statement_fidelity_review_complete": false,
   "remaining": [
-    "Prove primitive balanced pairing from the minimum-length Schur solution",
-    "Deduce distinct prefix sums for any greedy ordering of primitive indexed zero-sum terms",
-    "Apply the Lambert length bound and ordered-difference diameter to establish BoundedResidueObstruction",
-    "Remove the BoundedResidueObstruction hypothesis from the short-length multicolor upper theorem",
-    "Formalize Section 5's separate large-interval logarithmic m0 estimate",
-    "Formalize the odd-cycle estimate in Remark 2.2 if full manuscript coverage is desired",
-    "Independent manuscript-to-Lean statement review"
+    "Construct and prove primitivity of the zero-augmented balanced pair from a minimum Schur witness",
+    "Construct the sorted indexed p,q pair, preserving sums, multiplicities and bounds",
+    "Derive the attained positive and negative signed-difference extrema needed by Section5Numerics",
+    "Deduce unconditional BoundedResidueObstruction and BoundedTwoPowerUpper",
+    "Recheck all Section 5 final declarations with a clean aggregated axiom audit",
+    "Formalize the separate logarithmic Section 5 improvement, and the Remark 2.2 odd-cycle estimate if complete manuscript coverage is desired",
+    "Independent source-to-Lean manuscript correspondence review"
   ],
   "source_parameter_corollary_1_2_verified": true,
   "source_parameter_corollary_1_2_audit_run": "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44748112697",
@@ -55,8 +55,16 @@
     "bounded_two_power_upper_of_bounded_obstruction",
     "primitive_zero_sum_term_ne_zero"
   ],
-  "section_5_new_source_modules_pending_ci": [
-    "ZeroBlock.lean",
-    "LambertPrimitive.lean"
-  ]
+  "section_5_new_source_modules_pending_ci": [],
+  "section_5_lambert_finset_verified": true,
+  "section_5_lambert_indexed_verified": true,
+  "section_5_balanced_primitive_bridge_verified": true,
+  "section_5_sorted_pair_numerical_implication_verified": true,
+  "section_5_new_results_ci": [
+    "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44905537248",
+    "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44905606129",
+    "https://github.com/rafaelmiyazaki/lean_proofs/actions/runs/44905838508"
+  ],
+  "section_5_expanded_axiom_audit_source_fixed": true,
+  "section_5_expanded_axiom_audit_green_pending": true
 }
