@@ -138,3 +138,4 @@ import RMFormal.Schur.MinimalZeroSum
 import RMFormal.Schur.ZeroBlock
 import RMFormal.Schur.LambertPrimitive
 import RMFormal.Schur.WeightedZeroBlock
+import RMFormal.Schur.LambertFinset
