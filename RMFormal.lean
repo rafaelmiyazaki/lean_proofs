@@ -141,3 +141,4 @@ import RMFormal.Schur.WeightedZeroBlock
 import RMFormal.Schur.LambertFinset
 import RMFormal.Schur.LambertTheorem
 import RMFormal.Schur.BalancedPrimitive
+import RMFormal.Schur.Section5Numerics
