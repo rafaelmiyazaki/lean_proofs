@@ -49,7 +49,9 @@ theorem lambert_length_of_no_proper_zero_sublist
     have heqFin : (⟨i.val, hi⟩ : Fin (order.map f).length) =
         (⟨j.val, hj⟩ : Fin (order.map f).length) :=
       hlistInject hmap
-    exact Fin.ext (congrArg Fin.val heqFin)
+    have hval : i.val = j.val :=
+      congrArg (fun x : Fin (order.map f).length => x.val) heqFin
+    exact Fin.ext hval
   exact lambert_length_of_distinct_prefixes
     f a b t order hwalk hpartialInject
 
