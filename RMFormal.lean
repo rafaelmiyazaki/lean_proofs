@@ -139,3 +139,4 @@ import RMFormal.Schur.ZeroBlock
 import RMFormal.Schur.LambertPrimitive
 import RMFormal.Schur.WeightedZeroBlock
 import RMFormal.Schur.LambertFinset
+import RMFormal.Schur.LambertTheorem
